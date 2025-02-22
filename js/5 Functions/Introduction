@@ -1,0 +1,51 @@
+FUNCTION
+--------
+1. Function is a self contained block of statement.
+2. Every function performs some specific task.
+3. Function is defined by function keyword followed by function name in traditional manner(changes or syntax may vary according to ES5 to ES6+ versions).
+syntax: 
+    function <function_name>(){
+
+    }
+4. We needs to provide body of a function to define it as a function.
+
+Types of Function : 
+-------------------
+There are two types of function : 
+a. Built-In function | In-Built function | Standard function | Library function | Predefined function : Whose definition part is already defined.
+For ex : parseInt(), parseFloat(), Math.pow(), toPrecision() etc
+
+b. UserDefined function : Whose definition part is defined by the programmer according to its programming needs.
+For ex : 
+    function add(){
+        ......
+    }
+
+Advantages of function : 
+------------------------
+1. Function reduces program size.
+2. Function increases code reusability.
+3. Function reduces redundancy of code.
+4. Function makes debugging easier.
+5. We can create n number of functions.
+6. A function can be called n number of times.
+
+Category of Function : 
+----------------------
+1. No argument with no return type
+2. No argument with return type
+3. With argument no return type
+4. With argument with return type
+
+Basic syntax to use function in javascript
+------------------------------------------
+
+Javascript
+
+function <function_name>(){
+    ...
+}
+
+<function_name>();
+
+Note : If we do not return any data or value from function then in that case by default return value of function will be undefined.

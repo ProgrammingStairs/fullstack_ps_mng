@@ -1,0 +1,16 @@
+Array in JavaScript
+-------------------
+1. Array is a collection of Homogenous(same type elements) or heterogenous(different type elements) data elements.
+2. Array falls under non primitive datatype
+3. Typeof array is object
+4. Array works on the concept of indexing, and array indexing always starts from 0 as it follows number system.
+5. Array works on continous memory allocation.
+6. Prerequisite for array allocation is base address.
+7. Array elements shares same name but differentiable by there indexing.
+8. Types of array :
+    a. One dimensional array    
+    b. Two dimensional array -- Jagged array
+    c. Multi dimensional array
+9. Syntax : 
+    var  <array_name> = [element_1,element_2,element_3,.....,element_n];
+    

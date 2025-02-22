@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getColor(){
+            var color = document.getElementById("color").value;
+            console.log("Color : ",color);
+            var body = document.getElementById("body");
+            body.style.backgroundColor = color;
+        }
+    </script>
+ </head>
+<body id="body">
+    <h2>Example of JavaScript</h2>
+    <select name="" onchange="getColor()" id="color">
+        <option value="">Select Color</option>
+        <option value="Orange">Orange</option>
+        <option value="Green">Green</option>
+        <option value="Orchid">Orchid</option>
+        <option value="Crimson">Crimson</option>
+    </select>
+</body>
+</html>

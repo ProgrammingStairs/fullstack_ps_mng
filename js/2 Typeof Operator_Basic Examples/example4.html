@@ -1,0 +1,46 @@
+<!-- 
+    Type of coercion : 
+        a. Number to String conversion
+        b. String to Number conversion
+        c. Boolean to Number
+        d. Equality Operator
+-->
+<script>
+    // Number to String conversion
+    var a = 100 + '100';
+    document.write("<br>a : "+a+" typeof a : "+typeof a);
+    var b = true + '100';
+    document.write("<br>b : "+b+" typeof b : "+typeof b);
+
+    // String to Number conversion
+    var c = 10 - '5';
+    var d = 10 * '5';
+    var e = 10 / '5';
+    var f = 10 % '5';
+    document.write("<br><br>c : "+c+" typeof c : "+typeof c);
+    document.write("<br>d : "+d+" typeof d : "+typeof d);
+    document.write("<br>e : "+e+" typeof e : "+typeof e);
+    document.write("<br>f : "+f+" typeof f : "+typeof f);
+    
+    // Boolean to Number
+    var g = true + 3;
+    var h = false + 3;
+    var i = true - 3;
+    var j = false - 3;
+    document.write("<br><br>g : "+g+" typeof g : "+typeof g);
+    document.write("<br>h : "+h+" typeof h : "+typeof h);
+    document.write("<br>i : "+i+" typeof i : "+typeof i);
+    document.write("<br>j : "+j+" typeof j : "+typeof j);
+    
+    // Equality Operator
+    document.write("<br><br>100=='100' : "+(100=='100'));
+    document.write("<br>100==='100' : "+(100==='100'));
+    var x = null==0;
+    document.write("<br>null==null : "+(null==null));
+    document.write("<br>null==0 : "+x);
+    document.write("<br>null>=0 : "+(null>=0));
+    document.write("<br>null==false : "+(null==false));
+    document.write("<br>null==undefined : "+(null==undefined));
+    
+
+</script>

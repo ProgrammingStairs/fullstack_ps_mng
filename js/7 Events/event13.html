@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function usernameValidate(){
+            var username = document.getElementById("username");
+            var udisplay = document.getElementById("udisplay");
+            
+            if(username.value==''){
+                udisplay.innerHTML = "Username Required";
+                return false;                
+            }else
+                udisplay.innerHTML = "";
+        }
+        function emailValidate(){
+            var email = document.getElementById("email");
+            var edisplay = document.getElementById("edisplay");
+            
+            if(email.value==''){
+                edisplay.innerHTML = "Email Required";
+                return false;                
+            }else
+                edisplay.innerHTML = "";
+        }
+        function passwordValidate(){
+            var password = document.getElementById("password");
+            var pdisplay = document.getElementById("pdisplay");
+            
+            if(password.value==''){
+                pdisplay.innerHTML = "Password Required";
+                return false;                
+            }else
+                pdisplay.innerHTML = "";
+        }
+        function genderValidate(){
+            var male = document.getElementById("male");
+            var female = document.getElementById("female");
+            var gdisplay = document.getElementById("gdisplay");
+            
+            if(male.checked==false && female.checked==false){
+                gdisplay.innerHTML = "Gender Required";
+                return false;                
+            }else
+                gdisplay.innerHTML = "";
+        }
+        function subjectValidate(){
+            var subject = document.getElementById("subject");
+            var sdisplay = document.getElementById("sdisplay");
+            
+            if(subject.selectedIndex==0){
+                sdisplay.innerHTML = "Subject Required";
+                return false;                
+            }else
+                sdisplay.innerHTML = "";
+        }
+        function validate(){
+            var usernameStatus = usernameValidate();
+            var emailStatus = emailValidate();
+            var passwordStatus = passwordValidate();
+            var genderStatus = genderValidate();
+            var subjectStatus = subjectValidate();
+
+            var edisplay = document.getElementById("edisplay");
+            var pdisplay = document.getElementById("pdisplay");
+            var gdisplay = document.getElementById("gdisplay");
+            var sdisplay = document.getElementById("sdisplay");
+
+            if(usernameStatus==false){
+                if(emailStatus==false)
+                    edisplay.innerHTML="*";
+                if(passwordStatus==false)
+                    pdisplay.innerHTML="*";
+                if(genderStatus==false)
+                    gdisplay.innerHTML="*";
+                if(subjectStatus==false)
+                    sdisplay.innerHTML="*";
+                return false;
+            }
+            else if(emailStatus==false){
+                if(passwordStatus==false)
+                    pdisplay.innerHTML="*";
+                if(genderStatus==false)
+                    gdisplay.innerHTML="*";
+                if(subjectStatus==false)
+                    sdisplay.innerHTML="*";
+                return false;
+            }
+            else if(passwordStatus==false){
+                if(genderStatus==false)
+                    gdisplay.innerHTML="*";
+                if(subjectStatus==false)
+                    sdisplay.innerHTML="*";
+                return false;
+            }
+            else if(genderStatus==false){
+                if(subjectStatus==false)
+                    sdisplay.innerHTML="*";
+                return false;
+            }
+            else if(subjectStatus==false){
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>JavaScript Example</h2>
+    <form action="welcome.html" onsubmit="return validate()">
+        
+        <input type="text" onkeyup="usernameValidate()" placeholder="Enter Username" id="username">
+        <span style="color:red" id="udisplay">*</span><br>
+
+        <input type="email" onkeyup="emailValidate()" placeholder="Enter Email" id="email">
+        <span style="color:red" id="edisplay">*</span><br>
+
+        <input type="password" onkeyup="passwordValidate()" placeholder="Enter Password" id="password">
+        <span style="color:red" id="pdisplay">*</span><br>
+
+        <input type="radio" onclick="genderValidate()" id="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female">
+        <label for="female">Female</label>
+        <span style="color:red" id="gdisplay">*</span><br>
+
+        <select id="subject" onchange="subjectValidate()">
+            <option value="">Select Subject</option>
+            <option value="C Language">C Language</option>
+            <option value="C++ Language">C++ Language</option>
+            <option value="Java Language">Java Language</option>
+            <option value="Python Language">Python Language</option>
+        </select>
+        <span style="color:red" id="sdisplay">*</span><br>
+
+        <input type="submit" value="Submit"><br>
+    </form>
+</body>
+</html>

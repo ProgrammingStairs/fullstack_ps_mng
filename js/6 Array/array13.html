@@ -1,0 +1,35 @@
+<!-- Example showing the concept of array -->
+<script>
+    var arr = [3,4,36,37,32,3,4,44,39];
+    // var result = arr.find((element,i)=>{
+    //     document.write("<br>index : "+i);
+    //     return element>30;
+    // });
+    // document.write("Result : "+result);
+
+    // var result = arr.filter((element,i)=>{
+    //     document.write("<br>index : "+i);
+    //     return element>30;
+    // });
+    // document.write("<br>Result : "+result);
+
+    // var result = arr.some((element,i)=>{
+    //     document.write("<br>index : "+i);
+    //     return element>30;
+    // });
+    // document.write("<br>Result : "+result);
+
+    // var result = arr.every((element,i)=>{
+    //     document.write("<br>index : "+i);
+    //     return element>30;
+    // });
+    // document.write("<br>Result : "+result);
+
+    var result = arr.reduce((element,value)=>{
+        document.write("<br>element : "+element+"&nbsp;&nbsp;&nbsp;&nbsp;value : "+value);
+        return element+value;
+    });
+    document.write("<br>Result : "+result);
+
+</script>
+

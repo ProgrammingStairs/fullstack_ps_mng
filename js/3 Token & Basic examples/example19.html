@@ -1,0 +1,35 @@
+<script>
+    var arr = [10,20,30,40,50];
+    document.write("Array elements : "+arr);
+    document.write("<br>");
+
+    document.write("<br>arr[0] : "+arr[0]);
+    document.write("<br>arr[1] : "+arr[1]);
+    document.write("<br>arr[2] : "+arr[2]);
+    document.write("<br>arr[3] : "+arr[3]);
+    document.write("<br>arr[4] : "+arr[4]);
+
+    // normal loop    
+    document.write("<br><br>Array elements are :");
+    for(i=0;i<arr.length;i++){
+        document.write("<br>arr["+i+"] : "+arr[i]);
+    }
+
+    // for in loop ---> deals with index   
+    document.write("<br><br>Array elements are :");
+    for(var index in arr){
+        document.write("<br>arr["+index+"] : "+arr[index]);
+    }
+
+    // for of loop ---> deals with values   
+    document.write("<br><br>Array elements are :");
+    for(var value of arr){
+        document.write("<br>value : "+value);
+    }
+
+    // for each loop   
+    document.write("<br><br>Array elements are :");
+    arr.forEach((value)=>{
+        document.write("<br>value : "+value);
+    });
+</script>

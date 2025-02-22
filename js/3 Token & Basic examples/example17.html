@@ -1,0 +1,20 @@
+<script>
+    // program showing the concept of loop
+    /*
+      num   x   i   =   (num x i)
+        5   x   1   =   5
+        5   x   2   =   10
+        |       |       |
+        5   x   10   =  50
+    */
+   var num = prompt("Enter Number");
+   if(isNaN(num))
+    alert("Not a Number | Please try to insert again");
+   else{
+    var i=1;
+        do{
+            document.write(num+" x "+i+" = "+(num*i)+"<br>");
+            i++;
+        }while(i<=10);
+   } 
+</script>

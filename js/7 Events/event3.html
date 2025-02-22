@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function over(){
+            var demo1 = document.getElementById("demo1");
+            demo1.style.color = "red";
+        }
+        function move(){
+            var demo2 = document.getElementById("demo2");
+            demo2.style.fontSize = "30px";
+        }
+        function enter(){
+            var demo3 = document.getElementById("demo3");
+            demo3.style.fontWeight = "bolder";
+        }
+        function up(){
+            var demo4 = document.getElementById("demo4");
+            demo4.style.fontFamily = "cursive";
+        }
+        function down(){
+            var demo5 = document.getElementById("demo5");
+            demo5.style.textTransform = "uppercase";
+        }
+        function leave(){
+            var demo6 = document.getElementById("demo6");
+            demo6.style.textDecoration = "line-through";
+        }
+        function out(){
+            var demo7 = document.getElementById("demo7");
+            demo7.style.backgroundColor = "red";
+        }
+
+    </script>
+</head>
+<body>
+      <span id="demo1" onmouseover="over()">Over, ipsum dolor sit amet consectetur adipisicing elit. Cum, ipsam?</span><br>
+      <span id="demo2" onmousemove="move()">Move, ipsum dolor sit amet consectetur adipisicing elit. Cum, ipsam?</span><br>
+      <span id="demo3" onmouseenter="enter()">Enter, ipsum dolor sit amet consectetur adipisicing elit. Cum, ipsam?</span><br>
+      <span id="demo4" onmouseup="up()">Up, ipsum dolor sit amet consectetur adipisicing elit. Cum, ipsam?</span><br>
+      <span id="demo5" onmousedown="down()">Down, ipsum dolor sit amet consectetur adipisicing elit. Cum, ipsam?</span><br>
+      <span id="demo6" onmouseleave="leave()">Leave, ipsum dolor sit amet consectetur adipisicing elit. Cum, ipsam?</span><br>
+      <span id="demo7" onmouseout="out()">Out, ipsum dolor sit amet consectetur adipisicing elit. Cum, ipsam?</span><br>
+
+    </body>
+</html>

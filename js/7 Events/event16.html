@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showPassword(){
+            var password = document.getElementById("password");
+            if(password.type=="text")
+                password.type = "password";
+            else
+                password.type = "text";
+        }
+        function foc(){  
+            var password = document.getElementById("password");
+            password.style.backgroundColor = "crimson";
+            password.style.color="white";
+        }
+        function blu(){  
+            var password = document.getElementById("password");
+            password.style.backgroundColor = "white";
+            password.style.color="crimson";
+        }
+    </script>
+</head>
+<body>
+    <input type="password" onfocus="foc()" onblur="blu()" placeholder="Enter Password" id="password">
+    <input type="checkbox" onclick="showPassword()">Show Password
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!-- Example showing the concept of array -->
+<script>
+    var arr = [34,45,6,7,32,10,234,44,9];
+    document.write("Minimum element : "+Math.min(34,45,6,7,32,10,234,44,9));
+    document.write("<br>Maximum element : "+Math.max(34,45,6,7,32,10,234,44,9));
+    document.write("<br>Minimum element : "+Math.min(...arr));
+    document.write("<br>Maximum element : "+Math.max(...arr));
+    document.write("<br>Minimum element : "+Math.min.apply(null,arr));
+    document.write("<br>Maximum element : "+Math.max.apply(null,arr));
+    document.write("<br>indexOf : "+arr.indexOf(6));
+</script>
+

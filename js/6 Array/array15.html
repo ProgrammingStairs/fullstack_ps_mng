@@ -1,0 +1,19 @@
+<!-- Example showing the concept of bind | apply | call -->
+<script>
+// apply method | call method
+
+function myFunction(year1,year2){
+    document.write(`Hello ${this["Full Name"]}, your bornYear is ${this.bornYear} and you completed your graduation and post graduation in ${year1} and ${year2}`);
+}
+const obj = {
+    "Full Name" : "Andrew Anderson",
+    bornYear : 1956
+}
+// document.write("<br>Example of Apply method<br>");
+// myFunction.apply(obj,[1980,1984]);
+
+document.write("<br>Example of Call method<br>");
+myFunction.call(obj,1980,1984);
+
+</script>
+

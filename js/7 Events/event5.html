@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getData(operator){
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var data;
+                if(operator=='+')
+                    data = num1+num2;
+                else if(operator=='-')
+                    data = num1-num2;
+                else if(operator=='*')
+                    data = num1*num2;
+                else if(operator=='/')
+                    data = num1/num2;
+                else if(operator=='%')
+                    data = num1%num2;
+            document.getElementById("res").value = data;
+            document.getElementById("result").innerHTML = "Result : "+data;
+            document.getElementById("add").value = "Addition : "+data;
+        }
+    </script>
+ </head>
+<body>
+    <h2>Example of JavaScript</h2>
+    <input type="number" placeholder="Enter First Number" id="num1"><br>
+    <input type="number" placeholder="Enter Second Number" id="num2"><br>
+    <input readonly type="number" placeholder="Result" id="res"><br><br>
+    <input type="submit" value="+" onclick="getData('+')" id="add">
+    <input type="submit" value="-" onclick="getData('-')">
+    <input type="submit" value="x" onclick="getData('*')">
+    <input type="submit" value="/" onclick="getData('/')">
+    <input type="submit" value="%" onclick="getData('%')">
+    <br><br>
+    <span id="result">Result will show here</span>
+</body>
+</html>

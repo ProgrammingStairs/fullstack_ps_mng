@@ -1,0 +1,26 @@
+<script>
+    var arr = [10,21,30,40,50];
+    document.write("Array elements : "+arr);
+    document.write("<br>");
+
+    // arr.filter((value)=>{
+    //     document.write(value+"    ");
+    // });
+
+    // var arrData = arr.filter((value)=>{
+    //     return value;
+    // });
+    // document.write(arrData);
+
+    // var arrData = arr.filter((value)=>{
+    //     return value%2==0;
+    // });
+    // document.write(arrData);
+
+    var arrData = arr.filter((value)=>{
+        if(value%2==0)
+            return value;
+    });
+    document.write(arrData);
+
+</script>

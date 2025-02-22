@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function over(){
+            document.getElementById("overCount").innerHTML++;
+        }
+        function move(){
+            document.getElementById("moveCount").innerHTML++;
+        }
+        function enter(){
+            document.getElementById("enterCount").innerHTML++;
+        }
+    </script>
+    <style>
+        div{
+            background-color: orange;
+            padding: 10px;
+            margin: 10px;
+        }
+        h2{
+            padding: 10px;
+            margin: 10px;
+            background-color: green;
+            color:white;
+        }
+        p{
+            padding: 10px;
+            font-size: 20px;
+            background-color: crimson;
+            color:white;
+            margin: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div onmouseover="over()">
+        <center><h2>Mouse Over : <span id="overCount">0</span></h2></center>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur facilis ex error dolore. Eaque beatae odit mollitia animi! Ullam alias ipsam vitae, sequi sint aliquam odio expedita nesciunt eaque totam necessitatibus beatae accusamus. Totam reprehenderit explicabo omnis possimus velit natus iste id provident non. Fugit suscipit officia iure culpa esse.
+        </p>
+    </div>
+    <div onmousemove="move()">
+        <center><h2>Mouse Move : <span id="moveCount">0</span></h2></center>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur facilis ex error dolore. Eaque beatae odit mollitia animi! Ullam alias ipsam vitae, sequi sint aliquam odio expedita nesciunt eaque totam necessitatibus beatae accusamus. Totam reprehenderit explicabo omnis possimus velit natus iste id provident non. Fugit suscipit officia iure culpa esse.
+        </p>
+    </div>
+    <div onmouseenter="enter()">
+        <center><h2>Mouse Enter : <span id="enterCount">0</span></h2></center>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur facilis ex error dolore. Eaque beatae odit mollitia animi! Ullam alias ipsam vitae, sequi sint aliquam odio expedita nesciunt eaque totam necessitatibus beatae accusamus. Totam reprehenderit explicabo omnis possimus velit natus iste id provident non. Fugit suscipit officia iure culpa esse.
+        </p>
+    </div>
+
+</body>
+</html>

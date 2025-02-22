@@ -1,0 +1,14 @@
+<!-- Immediately invoked function expression -->
+<script>
+    (function(){
+        var num = prompt("Enter number");
+        if(isNaN(num))
+            alert("Please Enter Number");
+        else{
+            document.write("<br>Table of "+num);
+            for(i=1;i<=10;i++){
+                document.write("<br>"+num+" x "+i+" = "+(num*i));
+            }
+        }
+    })();
+</script>

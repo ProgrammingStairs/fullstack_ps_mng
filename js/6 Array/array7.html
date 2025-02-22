@@ -1,0 +1,41 @@
+<!-- Example showing the concept of 2d Array | jagged array-->
+<script>
+    var arr = [];
+    var row = parseInt(prompt("Enter rows : "));
+    
+    for(i=0;i<row;i++){
+        arr[i] = [];
+        var col = parseInt(prompt("Enter columns for "+(i+1)+" row : "));
+        for(j=0;j<col;j++){
+            arr[i][j] = parseInt(prompt("Enter Elements : "));
+        }
+    }
+    document.write("<br>Array elements are : <br>");
+    for(i=0;i<row;i++){
+        arr[i].forEach((value)=>{
+            document.write(value+"&nbsp;&nbsp;&nbsp;");
+        });
+        document.write("<br>");
+    }
+    
+</script>
+
+<!-- 
+1d array
+1. Program to check whether entered array is palindrome or not
+2. Program for linear search
+3. Program for Binary search
+4. Program for selection sort 
+5. Program for Bubble sort
+
+2d array
+1. Program to find out sum of corner elements
+2. Program to find out sum of left to right diagonal elements
+3. Program to find out sum of right to left diagonal elements
+4. Program to find out the sum of both the diagonal elements
+5. Program to find out the sum of specific row
+6. Program to find out the sum of specific column
+7. Program to check whether 2d array is a unit matrix or not
+8. Program to add two 2d array
+9. Program to multiply two 2d array
+-->

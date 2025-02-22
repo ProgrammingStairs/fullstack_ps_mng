@@ -1,0 +1,22 @@
+<!-- Example showing the concept of  Array -->
+<script>
+    var arr1 = ['Red','Green','Blue'];
+    document.write("<br>Array elements are : "+arr1);
+
+    var arr2 = ['Andrew','Anderson','Jackson'];
+    document.write("<br>Array elements are : "+arr2);
+
+    document.write("<br>Array elements are : "+arr1.concat(arr2));
+    document.write("<br>Array elements are : "+arr1.includes("Red"));
+    document.write("<br>Array elements are : "+arr1.includes("Jackson"));
+    //document.write("<br>Array elements are : "+arr1.reverse());
+    document.write("<br>Array elements are : "+arr1.sort());
+
+    var arr3 = [100,2,45,9,32];
+    document.write("<br>Array elements are : "+arr3.sort(function(a,b){
+        return a-b;
+    }));
+
+
+</script>
+

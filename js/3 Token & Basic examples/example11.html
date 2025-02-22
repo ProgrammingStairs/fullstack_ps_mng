@@ -1,0 +1,23 @@
+<script>
+    // example showing the concept of switch control statement
+    var a = parseInt(prompt("Enter First Number"));
+    var b = parseInt(prompt("Enter Second Number"));
+    var content = "Select Any One Option\n1 For Addition\n2 For Subtraction";
+    alert(content);
+    var choice = parseInt(prompt("Enter Choice"));
+    switch(choice){
+        case 1 : document.write("Addition : "+(a+b));
+                    break;
+        case 2 : document.write("Subtraction : "+(a-b));
+                    break;
+        case 3 : document.write("Multiplication : "+(a*b));
+                    break;
+        case 4 : document.write("Division : "+(a/b));
+                    break;
+        case 5 : document.write("Modulus : "+(a%b));
+                    break;
+        default : document.write("Invalid case");
+                    break;
+    }
+</script>
+

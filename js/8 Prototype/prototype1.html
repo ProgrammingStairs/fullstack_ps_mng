@@ -1,0 +1,30 @@
+<!-- Prototype based :  Where object is created by function. -->
+ <script>
+    // function Student(){
+    //     console.log(this);
+    //     console.log(this.constructor.name);
+    //     console.log(window.constructor.name);
+    // }
+    // Student();
+
+//    function Student(){
+//         console.log(this);
+//         console.log(this.constructor.name);
+//         console.log(window.constructor.name);
+//     }
+//     new Student();
+ 
+    function Student(){
+        console.log("Before : ",this);
+        document.write("Before : ",this.name);
+
+        this.name = "Andrew Anderson";
+        address = "Indore";
+        console.log("After : ",this);
+        document.write("<br>After : ",this.name);
+        document.write("<br>Address : ",address);
+
+    }
+    new Student();
+
+ </script>

@@ -1,0 +1,31 @@
+<!-- Example showing the concept of multidimensional Array -->
+<script>
+    var arr = [];
+    var num = parseInt(prompt("Enter no. of 2d array : "));
+    var row = parseInt(prompt("Enter no. of rows : "));
+    var col = parseInt(prompt("Enter no. of columns : "));
+
+    for(i=0;i<num;i++){
+        arr[i] = [];
+        for(j=0;j<row;j++){
+            arr[i][j] = [];
+            for(k=0;k<col;k++){
+                arr[i][j][k] = parseInt(prompt("Enter Elements : "));
+            }
+        }
+    }
+
+    
+    document.write("<br>Array elements are : <br>");
+    for(i=0;i<num;i++){
+        for(j=0;j<row;j++){
+            for(k=0;k<col;k++){
+                document.write(arr[i][j][k]+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+    }
+    
+</script>
+

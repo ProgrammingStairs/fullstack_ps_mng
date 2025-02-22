@@ -1,0 +1,14 @@
+<!-- Example showing the concept of Array | Sum of all the elements -->
+<script>
+    var arr = [];
+    var sum = 0;
+    var size = parseInt(prompt("Enter size"));
+    for(i=0;i<size;i++){
+        arr[i] = parseInt(prompt("Enter Element"));
+    }
+    document.write("<br>Array elements are : "+arr);
+    for(i=0;i<arr.length;i++){
+        sum = sum + arr[i];
+    }
+    document.write("<br>Sum of all the elements : "+sum);
+</script>

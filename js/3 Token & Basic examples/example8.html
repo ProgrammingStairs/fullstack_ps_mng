@@ -1,0 +1,27 @@
+<script>
+    // nested if else statement
+    var m1=56,m2=57,m3=67,m4=67,m5=89;
+    var total = m1+m2+m3+m4+m5;
+    var per = total/5;
+
+    document.write("<br>Total Marks : "+total);
+    document.write("<br>Percentage : "+per);
+    
+    if(per>=75 && per<=100)
+        document.write("<br>Grade A");
+    else{
+        if(per>=60 && per<75)
+            document.write("<br>Grade B");
+        else{
+            if(per>=50 && per<60)
+               document.write("<br>Grade C");
+            else{
+                if(per>=33 && per<50)
+                    document.write("<br>Grade D");
+                else
+                    document.write("<br>Fail");
+            }
+        }
+    }
+</script>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function up(){
+            alert("key up event");
+        }
+        function down(){
+            alert("key down event");
+        }
+        function press(){
+            alert("key press event");
+        }
+    </script>
+</head>
+<body>
+    <h2>JavaScript Example</h2>
+    <input type="text" placeholder="key up Event" onkeyup = "up()" ><br>
+    <input type="text" placeholder="key down Event" onkeydown = "down()" ><br>
+    <input type="text" placeholder="key press Event" onkeypress = "press()" ><br>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!-- Example showing the concept of bind | apply | call -->
+<script>
+// bind method
+
+function myFunction(year){
+    let old = new Date().getFullYear()-year;
+    document.write(`Hello ${this["Full Name"]}, your bornYear is ${this.bornYear} and you are ${old} years old`);
+}
+const obj = {
+    "Full Name" : "Andrew Anderson",
+    bornYear : 1956
+}
+const callingFunction = myFunction.bind(obj,1956);
+document.write("<br>Example of Bind method<br>");
+callingFunction();
+</script>
+

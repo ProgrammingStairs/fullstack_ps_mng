@@ -1,0 +1,17 @@
+<!-- Prototype based :  Where object is created by function. -->
+ <script>
+    function Student(){
+        //console.log(this);
+        this.name = "Andrew Anderson";
+        this.age = 34;
+        this.salary = 20000;
+        
+        document.write("<br> Name : "+this.name);
+        document.write("<br> Age : "+this.age);
+        document.write("<br> Salary : "+this.salary);
+        document.write("<br> Address : "+this.address);
+    }
+    Student.prototype.address = "Vijaynagar, Indore";
+
+    new Student();
+</script>

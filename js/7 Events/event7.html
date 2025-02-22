@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getColor(currentElement){
+            //console.log("Color : ",currentElement.value);
+            var body = document.getElementById("body");
+            body.style.backgroundColor = currentElement.value;
+        }
+    </script>
+ </head>
+<body id="body">
+    <h2>Example of JavaScript</h2>
+    <input type="submit" value="Red" onclick="getColor(this)">
+    <input type="submit" value="Green" onclick="getColor(this)">
+    <input type="submit" value="Blue" onclick="getColor(this)">
+</body>
+</html>

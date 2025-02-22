@@ -1,0 +1,25 @@
+Control Statement : 
+-------------------
+The statement or instructions are used to inform the computer to perform the task when the program is being executed.
+
+Types of Control statement : 
+----------------------------
+a. Sequential control statement
+        Input-----------Process---------------Output
+   ex : p,r,t       si = (p*r*t)/100          simple interest
+    
+b. Decision control statement | Conditional control statement
+        i.   if statement
+        ii.  if else statement 
+        iii. Nested if else statement
+        iv.  else if ladder
+
+c. Switch control statement
+        |- Menu based programming
+        |- Works on the concept of cases
+        
+d. Looping control statement : Looping is the process of performing same task or some task in an iterative manner untill certain condition is satisfied.
+
+There are two types of loops : 
+        a. Entry control loop : for loop and while loop
+        b. Exit control loop : do while loop

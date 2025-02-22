@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #maindiv{
+            height: 500px;
+            width: 800px;
+            border-style: solid;
+            margin: auto;
+        }
+        #banner{
+            height:320px;
+            width: 790px;
+        }
+        #subimg{
+            height:140px;
+            width:250px;
+            margin: 5px;
+        }
+        #innerdiv{
+            height:320px;
+            width: 790px;
+            margin: 5px;
+        }
+    </style>
+    <script>
+        // function replaceImage(currentObj){
+        //     var bannerImage = document.getElementById("banner").src;     
+        //     var currentObjImage = currentObj.src;     
+        //     var temp;
+        //     temp = bannerImage;
+        //     document.getElementById("banner").src = currentObjImage;
+        //     currentObj.src = temp;
+        // }
+        
+        function replaceImage(currentObj){
+            var temp = document.getElementById("banner").src;
+            document.getElementById("banner").src = currentObj.src;
+            currentObj.src = temp;
+        }
+    </script>
+ </head>
+<body>
+    <center><h2>JavaScript Example | Image Replace</h2></center>
+    <div id="maindiv">
+        <div id="innerdiv">
+            <img src="img1.jpg" id="banner" alt="">
+        </div>
+        <hr color="black">
+        <img src="img2.webp" id="subimg" onclick="replaceImage(this)" alt="">        
+        <img src="img3.jpg" id="subimg"  onclick="replaceImage(this)" alt="">        
+        <img src="img4.jpg" id="subimg"  onclick="replaceImage(this)" alt="">        
+    </div>
+</body>
+</html>
