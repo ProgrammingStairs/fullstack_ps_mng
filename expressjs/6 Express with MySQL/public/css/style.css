@@ -1,0 +1,13 @@
+input[type='email'],input[type='password'],input[type='text']{
+    height: 26px;
+    width: 260px;
+    margin: 2px;
+}
+input[type='submit'],input[type='reset']{
+    height: 30px;
+    width: 266px;
+    margin:2px;
+    border-width: 0px;
+    background-color: darkslategrey;
+    color:white;
+}

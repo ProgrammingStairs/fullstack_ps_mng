@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <center>
+        <h1>
+            Example of Express with MySql
+        </h1>
+    </center>
+    <hr>
+        <a href="/">Home</a> |
+        <a href="/login">Login</a>
+    <hr>
+    <h1>Register Form</h1>
+    <form action="/user/register" method="post">
+        <input type="text" placeholder="Enter username" name="username" id="username"> <br>
+
+        <input type="email" placeholder="Enter email" name="email" id="email"> <br>
+        
+        <input type="password" placeholder="Enter password" name="password" id="password"> <br>
+        
+        <input type="text" placeholder="Enter address" name="address" id="address"> <br>
+
+        <input type="submit" value="Register"> <br>
+        <input type="reset" value="reset"> <br>
+        <br>
+            <a href="/login">
+                Already Registered ? Login Here
+            </a>
+    </form>
+</body>
+</html>
