@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body{
+            padding: 10px;
+        }
+        #demo{
+            padding: 20px;
+            width: 90%;
+            height: auto;
+            border-style: solid;
+            margin:auto;
+        }
+        input,textarea,select{
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+        <center><h3>Registration</h3></center>
+        <form action="" class="form-group">
+            <input type="text" placeholder="Enter Username" class="form-control">
+            <input type="email" placeholder="Enter Email" class="form-control">
+            <input type="password" placeholder="Enter Password" class="form-control">
+            <textarea name="address" class="form-control" placeholder="Enter Address"></textarea>
+            Gender : 
+            <input type="radio" class="inline-radio"> Male
+            <input type="radio" class="inline-radio"> Female
+
+            <select name="subject" class="form-control">
+                <option value="">Select Subject</option>
+                <option value="">CLanguage</option>
+                <option value="">CLanguage</option>
+                <option value="">CLanguage</option>
+                <option value="">CLanguage</option>
+                <option value="">CLanguage</option>
+            </select>
+            <input type="submit" class="btn btn-success btn-block">
+            <input type="reset" class="btn btn-danger btn-block">
+            
+        </form>
+    </div>
+</body>
+
+</html>
