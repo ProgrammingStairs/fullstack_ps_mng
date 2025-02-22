@@ -1,0 +1,15 @@
+Table Tag : follows grid system (rows and columns)
+---------
+<table> 
+<thead>     =   table head (1st row which contains column name)
+<tfoot>     =   table foot
+<tbody>     =   table body
+<td>        =   table data
+<th>        =   table heading (column name in bold)
+<tr>        =   table row
+<caption>   =   Used to mention name of table
+<colgroup>  =   group columns
+<col>       =   represents columns
+
+rowspan = used for converting multiple rows into single row
+colspan = used for converting multiple columns into single column

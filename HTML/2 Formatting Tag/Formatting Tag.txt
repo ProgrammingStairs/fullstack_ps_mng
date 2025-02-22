@@ -1,0 +1,34 @@
+Formatting Tag
+--------------
+
+Heading Tags
+<h1>    =   32px (px=pixel, Picture Element)
+<h2>    =   24px
+<h3>    =   19px
+<h4>    =   16px (normal font size)
+<h5>    =   13px
+<h6>    =   11px
+
+<b>         bold
+<i>         italic
+<u>         underline
+
+<strong>    bold(HTML5) 
+<em>        italic(HTML5)
+
+<sup>       superscript
+<sub>       subscript
+
+<del>       line through
+<strike>    line through (deprecated)
+<q>         quotes
+<big>       font size > normal size
+<small>     font size < normal size
+<code>      Somthing needs to write in code layout
+<address>   gives italic view
+
+blockquote  indentation
+pre         pre formatted tag
+font        gives face(font family), color, size 
+mark        simply for highlightning text
+marquee     rendering text or image on a screen   

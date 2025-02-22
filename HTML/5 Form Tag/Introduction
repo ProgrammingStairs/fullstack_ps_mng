@@ -1,0 +1,28 @@
+Form Tag
+---------
+
+<form action="redirect_page.extension" method="get(default) | post">
+<fieldset>
+<legend>
+<input type="">
+    type="text"
+    type="email"
+    type="password"
+    type="radio"
+    type="checkbox"
+    type="date"
+    type="submit"
+    type="reset"
+    type="week"    (HTML5)
+    type="month"   (HTML5)
+    type="time"    (HTML5)
+    type="color"   (HTML5)
+    type="number"  (HTML5)
+    type="url"     (HTML5)
+    
+<select>
+<option value="Java Programming Language">Java
+<button>
+<label for="">
+<textarea rows="" cols="">
+<progress max="100" value="25">

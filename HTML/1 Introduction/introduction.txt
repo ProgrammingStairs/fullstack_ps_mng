@@ -1,0 +1,35 @@
+Basic Terminology
+-----------------
+1. Web : 
+Web is an information space, which comprises of documents and web resources(videos, images and audio) and are interlinked by hyperlinks and have some specific url, which are access via internet.
+
+2. Web Page : 
+    i.Webpages are the documents which are writtern in a plain text.
+    
+    ii. Webpage conntains multimedia content(audio,video,animation,images etc).
+
+    iii. Every webpage have some specific url.
+    
+    iv. Must be deployed on atleast one server to access globally
+
+3. WebSite :
+Website is a collection of webpages.
+Website are of two types : 
+    i. Static Website : 
+        a. Only one way communication takes place.
+        b. Contents are not changing frequently.
+
+    ii. Dynamic Website :
+        a. Two way communication takes place.
+        b. Contents may change accordingly.
+
+Note : Dynamic Website is also termed as WebApplication.
+
+4. Web Application : 
+Application which runs on the browser and whose execution takes place on the server.It works on the concept of client server architecture.
+
+5. Server : 
+Server is a highly configured machine.Which stores data, performs processing on that data and helps in retrieval of data.
+    Types of server : 
+        i. Web Server <---- web application
+        ii. Application Server <---- enterprise application

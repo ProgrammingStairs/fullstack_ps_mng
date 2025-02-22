@@ -1,0 +1,105 @@
+HTML Introduction
+-----------------
+1. Fullform of HTML is HyperText Markup language.
+where hypertext means text which contains link to another text.
+and markup language means tag <> based language.
+
+Markup language works on three terminology : 
+    a. Definition : Every tag have some specific definition
+    b. Processing : Every tag performs processing according to its definition
+    c. Presentation : At the end, tag display its content accordingly
+
+2. Html document contains multimedia content (audio, video, animation, images, transition, transformation etc)
+
+3. We can create html document on any word processing tool(notepad, wordpad) or on any editor(vs code, sublime text, dreamviewer) or on any IDE(NetBeans, Ecllipse) etc.
+
+4. Output of Html document is going to be displayed out on browser screen.
+
+5. We need to save html document by .html or by .htm extension.
+
+6. Html also works on three terminology : 
+    i.  Tag
+    ii. Attribute
+    iii.Element
+
+    i.  Tag : Tags are the hidden keywords, which are mainly used to display content on output screen.
+    Types of tags : 
+        a. Empty Tag (UnBalanced Tag)
+           only opening and no closing
+           ex : <br>, <hr>, <img> etc 
+
+        b. Container Tag (Balanced Tag)
+           opening and closing both
+           ex : <html></html>, <div></div> etc
+
+        c. Semantic Tag
+           Tag which shows its meaning by its name or where content is going to be displayed out on browser screen
+           ex : <header></header>, <footer></footer> etc
+
+        d. Non-Sementic Tag (Structural Tag)
+           Generalized tag 
+           ex : <div></div>, <form></form> etc
+
+        e. Self closing Tag 
+           ex : <br/>,<input/> etc
+
+    ii. Attribute : Attribute provides some additional information
+    <p>.............</p>
+    <p align="center">.................</p>
+
+    <img src="" height="" width="">
+
+    here align, src, height, and width are attributes, which simply provides some additional information.
+     
+    iii.Element
+    HTML is an element which represents whole body and it comprises of opening of <html> tag and closing of </html> tag.
+    Similarly, Body is also an element, which represents documents body and it comprises of opening of <body> tag and closing of </body> tag.
+
+History : 
+---------
+HTML was developed by Tim Berner's Lee(CERN RESEARCHER) in 1980's simply for sharing documents with his co-workers.But later on in 1991, he decided to brought html in web designing with few tags. Currently HTML5 is going in the market. 
+
+Key Features of HTML5 : 
+1. We can create dhtml(dynamic html)
+2. New tags included (<strong>,<em>,<del>) etc
+3. Audio video functionality (<audio>,<video>)
+4. Origin of Semantic tags(<header>,<footer>,<article>) etc 
+
+HW : difference between html and html5 (Interview Question)
+
+Structure of HTML : 
+-------------------
+<!DOCTYPE html> 
+here <! = MDO (Markup Declaration Open)
+     <!--  --> = also used in commenting
+
+     DOCTYPE = Documentation Type 
+     Doctype simply represents that which type of documentation, browser needs to expect with this coming html document.
+
+<html>            represents html document
+   <head>         head portion, includes links, styles and title etc
+      <title>     it simply represents the title of the page on title bar 
+         Home Page
+      </title>
+   </head>
+   <body>         represents document's body
+      <div></div>
+      <span></span>
+      <p></p>
+   </body>
+</html>
+
+save the file by filename.html
+and run it on browser
+
+Tags can be classified as :
+---------------------------
+1.Formatting Tag
+2.List Tag 
+3.Table Tag
+4.Anchor Tag
+5.Image Tag
+6.Semantic Tag
+7.Meta Tag
+8.Audio Video Tag 
+9.Form Tag
