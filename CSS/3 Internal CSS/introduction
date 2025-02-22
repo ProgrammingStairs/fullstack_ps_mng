@@ -1,0 +1,30 @@
+Internal CSS
+-------------
+
+<head>
+    <style>
+    ---- Selectors----
+Selector is the process(concept), which simply tells which property corresponding to its value is going to be implemented on which element.
+
+Types of selectors : 
+        1. Element selector (Tag selector)
+        2. Id selector(#)
+        3. Class selector(.)
+        4. Universal selector(*)
+        5. Grouping selector(seperated by comma)
+        6. Descendant selector
+        7. Advance Selector
+            a. Adjacent sibling selector(+)
+            b. Direct child selector(>)
+            c. General sibling selector(~)
+            d. Attribute selector
+            e. :nth-of-type()
+        8. Pseudo class selector(:)
+        9. Pseudo element selector(::)
+    </style>
+</head>
+<body>
+    <div></div>
+    <p></p>
+    <span></span>
+</body>

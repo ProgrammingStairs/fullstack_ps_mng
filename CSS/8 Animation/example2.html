@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo{
+            height:200px;
+            width:200px;
+            border-radius: 50%;
+            background-color: red;
+            animation-name: myanimation;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            margin: 50px;
+        }
+        @keyframes myanimation{
+            0%  {
+                background: linear-gradient(white,darkslategrey);
+                box-shadow: 1px 2px 30px 10px magenta;
+            }
+            25% {
+                background-color: orange;
+                box-shadow: 1px 2px 30px 10px dodgerblue;
+            }
+            50%  {
+                background-color: red;
+                box-shadow: 1px 2px 30px 10px magenta;
+            }
+            75% {
+                background-color: green;
+                box-shadow: 1px 2px 30px 10px darkslategrey;
+            }
+            100%  {
+                background-color: turquoise;
+                box-shadow: 1px 2px 30px 10px palevioletred;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo1{
+            float: left;
+            position: relative;
+            height:200px;
+            width:200px;
+            background-color: red;
+            animation-name: myanimation1;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            margin: 50px;
+        }
+        @keyframes myanimation1{
+            0%{
+                background-color: orange;
+                border-radius: 20px;
+                top:0px;
+                left:0px;
+            }
+            50%{
+                background-color: purple;
+                border-radius: 50%;
+                top:400px;
+                left:0px;
+            }
+            100%{
+                background-color: purple;
+                border-radius: 20px;
+                top:0px;
+                left:0px;
+            }
+        }
+        #demo2{
+            float: left;
+            position: relative;
+            height:200px;
+            width:200px;
+            background-color: red;
+            animation-name: myanimation2;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            margin: 50px;
+        }
+        @keyframes myanimation2{
+            0%{
+                background-color: orange;
+                border-radius: 20px;
+                top:0px;
+                left:0px;
+            }
+            50%{
+                background-color: purple;
+                border-radius: 50%;
+                top:400px;
+                left:0px;
+            }
+            100%{
+                background-color: purple;
+                border-radius: 20px;
+                top:0px;
+                left:0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="demo1"></div>
+    <div id="demo2"></div>
+</body>
+</html>

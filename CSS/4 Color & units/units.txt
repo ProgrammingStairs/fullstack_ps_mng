@@ -1,0 +1,61 @@
+Units in CSS : 
+--------------
+1. px (pixel = picture element)
+   fixed
+
+   div----parent-----400px
+   div----child------300px
+
+   div----parent-----200px
+   div----child------300px
+
+2. %
+   div----parent-----400px
+   div----child------75% (300px)
+
+   div----parent-----200px
+   div----child------75% (150px)
+
+3. vh (VIEWPORT HEIGHT) and vw (VIEWPORT WIDTH)
+   1vh = 1% of parent height 
+   1vw = 1% of parent width
+
+   parent(height) = 400px
+
+   1vh = 1% of 400px 
+       = 1/100 x 400
+       = 4px 
+
+   100vh = 100 x 4 = 400px    
+
+      parent(width) = 400px
+
+   1vw = 1% of 400px 
+       = 1/100 x 400
+       = 4px 
+
+   100vw = 100 x 4 = 400px    
+
+4. em (empherical unit) and rem (root empherical unit)
+   
+   ----em-----
+   default size
+   1em = 16px
+   2em = 32px
+   2.5em = 40px 
+
+   with respect to parent (10px)
+   1em = 10px
+   2em = 20px
+   2.5em = 25px 
+ 
+    ----rem----- (here html tag is the root)
+   default size
+   1rem = 16px
+   2rem = 32px
+   2.5rem = 40px 
+
+   with respect to parent(html) (10px)
+   1rem = 10px
+   2rem = 20px
+   2.5rem = 25px 

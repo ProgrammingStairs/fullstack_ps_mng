@@ -1,0 +1,69 @@
+Box Model : 
+Box Model simply defines how Html elements are going to be laid out on browser or output screen. Box Model contains three main properties : 
+a. Margin
+b. Border
+c. Padding
+
+a. Margin : 
+    i. Margin have no color
+    ii.Implements outside the box or elements
+    iii. properties : 
+            margin-top : 10px; 
+            margin-right : 20px; 
+            margin-bottom : 30px; 
+            margin-left : 40px;
+
+            shorthand way : 
+            margin : 10px 20px 30px 40px;
+                      T    R    B    L 
+                      
+            margin : 10px 20px 30px;
+                      T   R L   B
+
+            margin : 10px 20px;            
+                     T B   R L 
+
+            margin : 10px;
+                     TRBL
+
+    b. Border : 
+    i. Border have color
+    ii.Implements outside the box or elements
+    iii. properties : 
+            border-top : 10px; 
+            border-right : 20px; 
+            border-bottom : 30px; 
+            border-left : 40px;
+
+            shorthand way : 
+            border : 10px 20px 30px 40px;
+                      T    R    B    L 
+                      
+            border : 10px 20px 30px;
+                      T   R L   B
+
+            border : 10px 20px;            
+                     T B   R L 
+
+            border : 10px;
+                     TRBL
+
+    c. Padding : 
+    i. Padding do not have color
+    ii.Implements inside the box or elements
+    iii. properties : 
+            padding-top : 10px; 
+            padding-right : 20px; 
+            padding-bottom : 30px; 
+            padding-left : 40px;
+
+            shorthand way : 
+            padding : 10px 20px 30px 40px;
+                      T    R    B    L 
+                      
+            padding : 10px 20px 30px;
+                      T   R L   B
+            padding : 10px 20px;            
+                     T B   R L 
+            padding : 10px;
+                     TRBL

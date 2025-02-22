@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo{
+            position: absolute;
+            height:200px;
+            width:200px;
+            background-color: red;
+            animation-name: myanimation;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease-in;
+            margin: 50px;
+        }
+        @keyframes myanimation{
+            0%{
+                background-color: orange;
+                border-radius: 20px;
+                top:0px;
+                left:0px;
+            }
+            50%{
+                background-color: purple;
+                border-radius: 50%;
+                top:400px;
+                left:400px;
+            }
+            65%{
+                background-color: purple;
+                border-radius: 50%;
+                top:300px;
+                left:400px;
+            }
+            70%{
+                background-color: purple;
+                border-radius: 50%;
+                top:400px;
+                left:400px;
+            }
+            
+            75%{
+                background-color: purple;
+                border-radius: 50%;
+                top:0px;
+                left:800px;
+            }
+            100%{
+                background-color: purple;
+                border-radius: 20px;
+                top:0px;
+                left:0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+</html>

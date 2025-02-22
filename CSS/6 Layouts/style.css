@@ -1,0 +1,56 @@
+*{
+    margin:0px;
+}
+#header{
+    height: 60px;
+    border-style: solid;
+    background-color: red;
+}
+#nav{
+    height: 50px;
+    border-style: solid;
+    background-color: green;
+}
+#banner{
+    height: 480px;
+    border-style: solid;
+    background-color: blue;
+}
+#footer{
+    height: 55px;
+    border-style: solid;
+    background-color: purple;
+}
+#section1{
+    height:400px;
+    width: 500px;
+    border-style: solid;
+    margin: 36px;
+    float: left;
+    background-color: orange;
+}
+#section2{
+    height:400px;
+    width: 600px;
+    border-style: solid;
+    margin: 36px;
+    float: left;
+    background-color: magenta;
+}
+#box1{
+    height: 100px;
+    width: 90%;
+    border-style: solid;
+    margin: 22px;
+    background-color: tomato;
+}
+#box2{
+    height: 250px;
+    width: 250px;
+    border-style: solid;
+    margin: 22px;
+    float: left;
+    border-radius: 50%;
+    margin-top: 70px;
+    background-color: purple;
+}

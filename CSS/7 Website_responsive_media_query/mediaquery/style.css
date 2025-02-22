@@ -1,0 +1,47 @@
+body{
+    background-color: red;
+}
+
+/* @media screen and (max-width:800px) {
+    body{
+        background-color: green;
+    }
+} */
+
+/* 
+@media screen and (min-width:800px) and (max-width:1200px) {
+    body{
+        background-color: green;
+    }
+}
+
+@media screen and (min-width:600px) and (max-width:799px) {
+    body{
+        background-color: purple;
+    }
+}
+
+@media screen and (min-width:360px) and (max-width:599px) {
+    body{
+        background-color: orange;
+    }
+} 
+*/
+
+@media screen and (max-width:1200px) {
+    body{
+        background-color: green;
+    }
+}
+
+@media screen and (max-width:799px) {
+    body{
+        background-color: purple;
+    }
+}
+
+@media screen and (max-width:599px) {
+    body{
+        background-color: orange;
+    }
+} 

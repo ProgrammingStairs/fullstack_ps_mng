@@ -1,0 +1,26 @@
+Media Query : 
+-------------
+1. Media Query is mainly used to make webpage responsive
+2. Its a key feature of CSS
+3. We can make web page responsive in several mode like portrait, landscape and on any specific width.
+4. We need to use @media key to define media query in our webpage
+5.  Syntax : 
+    @media screen | all | print | speech and (max-width:360px){
+        ...
+        ...
+    } 
+
+    @media screen | all | print | speech and (min-width:360px){
+        ...
+        ...
+    } 
+
+    @media screen | all | print | speech and (orientation:portrait){
+        ...
+        ...
+    } 
+
+    @media screen | all | print | speech and (orientation:landscape){
+        ...
+        ...
+    } 

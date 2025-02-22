@@ -1,0 +1,48 @@
+
+Color
+----- 
+1. By Color name
+   color : red
+   background-color : green
+
+2. By RGB (R = Red, G = Green, B = Blue)
+   range : 0 to 255 
+   color : rgb(0,0,0);     = black
+   color : rgb(34,67,78);
+   color : rgb(255,255,255); = white
+   
+3. By RGBA (R = Red, G = Green, B = Blue, A = Alpha)
+   Alpha represents opacity and its value ranges from 0 to 1 
+   range : 0 to 255 
+   color : rgb(0,0,0,0.2);     = black
+   color : rgb(34,67,78,0.3);
+   color : rgb(255,255,255,0.5); = white
+   
+4. HSL (H = Hue, S = Saturation, L = Lightness)
+       degree        percentage       percentage 
+
+   hsl(90,50%,80%)
+   
+   saturation 
+     100%         75%    50%    25%        0%
+   Darkness<----------------------------Lightness
+
+   lightness 
+   100%         75%    50%    25%        0%
+   Lightness<--------------------------Darkness
+
+5. HSLA (H = Hue, S = Saturation, L = Lightness, A = Alpha)
+   degree        percentage       percentage    opacity
+
+    hsl(90,50%,80%,0.5)
+
+6. By Hexadecimal | By Hex Code
+   #RRGGBB
+   #456789
+
+   #884466 (#RRGGBB)
+   #846 (#RGB) = shorthand way
+
+   #000000   = black
+   #345678
+   #999999   = white  

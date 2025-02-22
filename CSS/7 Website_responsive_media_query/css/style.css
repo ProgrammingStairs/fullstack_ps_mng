@@ -1,0 +1,601 @@
+*{
+    margin:0;
+}
+#container{
+    height: auto;
+    width: 95%;
+    margin: auto;
+}
+#header{
+    height: 60px;
+    background-color: white;
+}
+#logo{
+    height: 60px;
+}
+#heading{
+    font-size: 30px;
+    font-family: candara;
+    position: absolute;
+    margin-top: 10px;
+}
+#nav{
+    height: 50px;
+    background-color: goldenrod;
+    position: sticky;
+    top:0;
+    z-index: 1;
+}
+#nav ul{
+    list-style: none;
+    padding-top: 13px;
+}
+#nav ul li{
+    display: inline;
+}
+#nav ul li a{
+    text-decoration: none;
+    color:black;
+    font-size: 22px;
+    font-family: candara;
+    margin-left: 75px;
+}
+#nav ul li a:hover{
+    color:red;
+}
+#nav ul li ul{
+    display: none;
+}
+#nav ul li:hover ul{
+    display: block;
+    position: absolute;
+    width: 150px;
+    line-height: 40px;
+    background-color: goldenrod;
+    color:black;
+    margin-left: 310px;
+}
+#nav ul li ul li{
+    margin-left: -60px;
+}
+#caretlogo{
+    height:15px;
+}
+#line{
+    margin-left: -40px;
+}
+#banner{
+    height: 510px;
+}
+#banner_img{
+    height: 510px;
+    width: 100%;
+}
+#mqdemo{
+    height: 30px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: candara;
+}
+#content{
+    background-color: whitesmoke;
+    font-family: candara;
+    padding: 40px;
+}
+#content h1{
+    margin: 10px;
+}
+#content p{
+    margin: 10px;
+    font-size: 20px;
+    text-align: justify;
+}
+#box{
+    height:400px;
+    padding: 20px;
+}
+#box1{
+    height: 365px;
+    width: 345px;
+    float: left;
+    margin: 20px;
+}
+#section1_box{
+    height: 300px;
+    overflow: hidden;
+    box-shadow: 1px 1px 10px 1px;
+    border-radius: 50%;
+}
+#section1_img{
+    height: 300px;
+    width: 100%;
+    transition: 2s;
+}
+#section1_img:hover{
+    transform: scale(1.2);
+    /* transform: rotate(360deg); */
+}
+#section1_btn{
+    height: 40px;
+    width: 40px;
+    border-width: 0px;
+    color:white;
+    font-size: 18px;
+    background-color: goldenrod;
+}
+#section1_input{
+    height: 35px;
+    width:200px;
+    font-size: 18px;
+}
+#section2_box{
+    margin-top: 12px;
+    margin-left: 25px;
+}
+#about{
+    height:500px;
+    background-color: whitesmoke;
+    padding: 50px;
+    font-family: candara;
+}
+#about1{
+    height: 360px;
+    width: 360px;
+    float: left;
+    margin: 20px;
+}
+#about_img{
+    height: 360px;
+    width: 360px;
+    border-radius: 50%;
+}
+#about2{
+    padding: 20px;
+    height: 320px;
+    width: 620px;
+    text-align: justify;
+    font-size: 20px;
+    float: left;
+    margin: 20px;
+}
+#contact{
+    height: 500px;
+    background-color: black;
+    padding: 20px;
+    color:white;
+    font-family: candara;
+}
+#contact1{
+    color:white;
+    height:350px;
+    width:220px;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+}
+#contact2{
+    color:white;
+    height:350px;
+    width:220px;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+}
+#contact3{
+    color:white;
+    height:350px;
+    width:220px;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+}
+#contact4{
+    color:white;
+    height:370px;
+    width:360px;
+    margin: 10px;
+    float: left;
+}
+iframe{
+    height:370px;
+    width:360px;
+}
+#contact1 ul li a,#contact2 ul li a{
+    text-decoration: none;
+    color:white;
+    line-height: 40px;
+    font-size: 20px;
+}
+#contact3 span{
+    font-size: 20px;
+}
+#footer{
+    height: 30px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: whitesmoke;
+    font-family: candara;
+}
+#mainbox{
+    height:510px;
+}
+#loginbox{
+    height:auto;
+    width: 400px;
+    background-color: whitesmoke;
+    /* padding: 20px; */
+    margin: auto;
+    margin-top: 100px;
+    position: absolute;
+    margin-left: 380px;
+    box-shadow: 1px 1px 50px 1px gray;
+}
+#btnactive{
+    height: 35px;
+    width: 49.5%;
+    background-color: goldenrod;
+    color:white;
+    font-size: 20px;
+    font-family: candara;
+    border-width: 0px;
+}
+#btnactive a{
+    text-decoration: none;
+    color:white;
+}
+#btninactive{
+    height: 35px;
+    width: 49.5%;
+    background-color: black;
+    font-size: 20px;
+    font-family: candara;
+    border-width: 0px;
+}
+#btninactive a{
+    text-decoration: none;
+    color:white;
+}
+#inpt{
+    height: 30px;
+    width: 300px;
+    font-size: 18px;
+    text-align: center;
+    margin-left: 48px;
+    margin-top: 10px;
+    outline: 0px;
+    border:2px solid black;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background: transparent;
+}
+#btn{
+    height: 35px;
+    width: 300px;
+    font-size: 18px;
+    text-align: center;
+    margin-left: 48px;
+    margin-top: 10px;
+    background-color: black;
+    color:white;
+    font-family: candara;
+    border-width: 0px;
+}
+
+#humlogo{
+    height: 30px;
+}
+#humber,label{
+    display: none;
+}
+@media screen and (max-width:540px){
+    #caretlogo{
+        transform: rotate(270deg);
+        height: 10px;
+    }
+    *{
+        margin:0;
+    }
+    #container{
+        height: auto;
+        width: 95%;
+        margin: auto;
+    }
+    #header{
+        height: 40px;
+        background-color: white;
+    }
+    #logo{
+        height: 40px;
+    }
+    #heading{
+        font-size: 30px;
+        font-family: candara;
+        position: absolute;
+        margin-top: 10px;
+    }
+    #nav{
+        height: 40px;
+        background-color: goldenrod;
+        position: sticky;
+        top:0;
+        z-index: 1;
+    }
+    #nav ul{
+        list-style: none;
+        padding-top: 10px;
+    }
+    #nav ul li{
+        display: block;
+    }
+    #nav ul li a{
+        text-decoration: none;
+        color:black;
+        font-size: 16px;
+        font-family: candara;
+        margin-left: 10px;
+    }
+    #nav ul li a:hover{
+        color:red;
+    }
+    #nav ul li ul{
+        display: none;
+    }
+    #nav ul li:hover ul{
+        display: block;
+        position: absolute;
+        width: 75px;
+        line-height: 20px;
+        background-color: lightgoldenrodyellow;
+        color:black;
+        margin-left: 90px;
+        margin-top: -80px;
+    }
+    #nav ul li ul li{
+        margin-left: -25px;
+    }
+    #line{
+        margin-left: -40px;
+    }
+    /* humberger logic starts*/
+        #nav ul{
+            visibility: hidden;
+        }
+        #humber,label{
+            display: block;
+            float: right;
+            margin-top: 5px;
+        }
+        #humber{
+            visibility: hidden;
+        }
+        #humber:checked~ul{
+            visibility: visible;
+            background-color: goldenrod;
+            line-height: 30px;
+        }
+        #nav ul li:hover ul{
+            visibility: visible;
+        }
+    /* humberger logic ends*/
+   
+    #banner{
+        height: 350px;
+    }
+    #banner_img{
+        height: 350px;
+        width: 100%;
+    }
+    #mqdemo{
+        height: 20px;
+        padding: 5px;
+        font-size: 18px;
+        font-family: candara;
+    }
+    #content{
+        background-color: whitesmoke;
+        font-family: candara;
+        padding: 20px;
+    }
+    #content h1{
+        font-size: 24px;
+        margin: 5px;
+    }
+    #content p{
+        margin: 5px;
+        font-size: 16px;
+        text-align: justify;
+    }
+    #box{
+        height:1200px;
+        padding: 20px;
+    }
+    #box1{
+        height: 365px;
+        width: 345px;
+        float: left;
+        margin-left: 60px;
+    }
+    #section1_box{
+        height: 300px;
+        overflow: hidden;
+        box-shadow: 1px 1px 10px 1px;
+        border-radius: 50%;
+    }
+    #section1_img{
+        height: 300px;
+        width: 100%;
+        transition: 2s;
+    }
+    #section1_img:hover{
+        transform: scale(1.2);
+        /* transform: rotate(360deg); */
+    }
+    #section1_btn{
+        height: 40px;
+        width: 40px;
+        border-width: 0px;
+        color:white;
+        font-size: 18px;
+        background-color: goldenrod;
+    }
+    #section1_input{
+        height: 35px;
+        width:200px;
+        font-size: 18px;
+    }
+    #section2_box{
+        margin-top: 12px;
+        margin-left: 25px;
+    }
+    #about{
+        height:950px;
+        background-color: whitesmoke;
+        padding: 50px;
+        font-family: candara;
+    }
+    #about1{
+        height: 360px;
+        width: 360px;
+        float: left;
+        margin: 20px;
+    }
+    #about_img{
+        height: 360px;
+        width: 360px;
+        border-radius: 50%;
+    }
+    #about2{
+        padding: 20px;
+        height: 320px;
+        width: 90%;
+        text-align: justify;
+        font-size: 18px;
+        float: left;
+        margin: 5px;
+    }
+    #contact{
+        height: 1700px;
+        background-color: black;
+        padding: 20px;
+        color:white;
+        font-family: candara;
+    }
+    #contact1{
+        color:white;
+        height:350px;
+        width:220px;
+        padding: 10px;
+        margin-left: 130px;
+        float: left;
+    }
+    #contact2{
+        color:white;
+        height:350px;
+        width:220px;
+        padding: 10px;
+        margin-left: 130px;
+        float: left;
+    }
+    #contact3{
+        color:white;
+        height:350px;
+        width:220px;
+        padding: 10px;
+        margin-left: 130px;
+        float: left;
+    }
+    #contact4{
+        color:white;
+        height:370px;
+        width:360px;
+        margin-left: 70px;
+        float: left;
+    }
+    iframe{
+        height:370px;
+        width:360px;
+    }
+    #contact1 ul li a,#contact2 ul li a{
+        text-decoration: none;
+        color:white;
+        line-height: 40px;
+        font-size: 20px;
+    }
+    #contact3 span{
+        font-size: 20px;
+    }
+    #footer{
+        height: 30px;
+        padding: 10px;
+        font-size: 18px;
+        background-color: whitesmoke;
+        font-family: candara;
+    }
+    #mainbox{
+        height:510px;
+    }
+    #loginbox{
+        height:auto;
+        width: 400px;
+        background-color: whitesmoke;
+        /* padding: 20px; */
+        /* margin: auto; */
+        margin-top: 100px;
+        position: absolute;
+        margin-left: 60px;
+        box-shadow: 1px 1px 50px 1px gray;
+    }
+    #btnactive{
+        height: 35px;
+        width: 49.5%;
+        background-color: goldenrod;
+        color:white;
+        font-size: 20px;
+        font-family: candara;
+        border-width: 0px;
+    }
+    #btnactive a{
+        text-decoration: none;
+        color:white;
+    }
+    #btninactive{
+        height: 35px;
+        width: 49.5%;
+        background-color: black;
+        font-size: 20px;
+        font-family: candara;
+        border-width: 0px;
+    }
+    #btninactive a{
+        text-decoration: none;
+        color:white;
+    }
+    #inpt{
+        height: 30px;
+        width: 300px;
+        font-size: 18px;
+        text-align: center;
+        margin-left: 48px;
+        margin-top: 10px;
+        outline: 0px;
+        border:2px solid black;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        background: transparent;
+    }
+    #btn{
+        height: 35px;
+        width: 300px;
+        font-size: 18px;
+        text-align: center;
+        margin-left: 48px;
+        margin-top: 10px;
+        background-color: black;
+        color:white;
+        font-family: candara;
+        border-width: 0px;
+    }
+    
+}

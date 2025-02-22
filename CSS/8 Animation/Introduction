@@ -1,0 +1,23 @@
+Animation : 
+1.Animation simply shows element in more attractive manner than usual manner.
+2.Animation can be implemented on text, images and elements like div.
+3.Animation uses @keyframes rule to implement Animation
+  syntax : @keyframes animation_name{
+                from{.....}
+                to{.......}
+            }
+
+           @keyframes animation_name{
+                0%{........}
+                50%{.......}
+                .....
+                100%{......}
+            }
+4. Animation have some properties : 
+    animation-name 
+    animation-duration
+    animation-iteration-count
+    animation-timing-function
+    animation-direction
+    etc etc
+ 

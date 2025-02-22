@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Attribute selector */
+        input[type='email']{
+            background-color: red;
+            color:orange;
+        }
+        input[type='password']{
+            background-color: blue;
+            color: black;
+        }
+
+        /* Pseudo element selector */
+        input::placeholder{
+            color:black;
+        }
+
+        span::after{
+            content:"After"
+        }
+        span::before{
+            content:"Before"
+        }
+        ul::first-line{
+            background-color: red;
+        }
+        li::first-letter{
+            font-size: 30px;
+            color:blue;
+        }
+        li::marker{
+            color:orange;
+        }
+
+        /* Pseudo class selector */
+        li:hover{
+            background-color: pink;
+        }
+        li:nth-of-type(even){
+            background-color: grey;
+        }
+        a:active{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <a href="">Click to See</a>
+    <br><br>
+    <span>#</span>
+    <input type="email" placeholder="Enter Email"> <br>
+    <span>#</span>
+    <input type="password" placeholder="Enter Password"> <br>
+
+    <ul>
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+        <li>Item4</li>
+        <li>Item5</li>
+        <li>Item6</li>
+        <li>Item7</li>
+    </ul>
+
+</body>
+</html>
