@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./header.ejs') %>
+    <h2>Student List</h2>
+    <%if(studentData.length==0){%>
+        <span>No Record Found</span>
+    <%}else{%>
+        <table border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Address</th>
+            </tr>
+            <%studentData.forEach((studObj,index)=>{%>
+                <tr>
+                    <td><%=index+1%></td>
+                    <td><%=studObj.name%></td>
+                    <td><%=studObj.email%></td>
+                    <td><%=studObj.password%></td>
+                    <td><%=studObj.address%></td>
+                </tr>
+            <%})%>
+        </table>
+    <%}%>
+</body>
+</html>

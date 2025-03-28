@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./header.ejs') %>
+    <center>
+        <h2>Search Student By Id</h2>
+        <form action="/searchStudent" method="post">
+            <input type="email" required placeholder="Enter Email" name="email" id="email"> 
+            <input type="submit" value="Search By Id"> 
+        </form>
+        <br>
+        <%if(studentData.length==0){%>
+            <%if(status){%>
+                <span>No Record Found</span>
+            <%}%>
+        <%}else{%>
+            <table border="1" cellspacing="0" cellpadding="10">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Address</th>
+                </tr>
+                    <tr>
+                        <td><%=studentData.name%></td>
+                        <td><%=studentData.email%></td>
+                        <td><%=studentData.password%></td>
+                        <td><%=studentData.address%></td>
+                    </tr>
+            </table>
+        <%}%>
+    </center>
+</body>
+</html>

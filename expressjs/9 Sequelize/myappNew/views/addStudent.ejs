@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./header.ejs') %>
+    <h2>Add Student Page</h2>
+    <span><%=message%></span>
+    <form action="/addStudent" method="post">
+        <input  type="text" placeholder="Enter Username" name="name" id="name"> <br>
+
+        <input required type="email" placeholder="Enter Email" name="email" id="email"> <br>
+        
+        <input required type="password" placeholder="Enter Password" name="password" id="password"> <br>
+        
+        <input required type="text" placeholder="Enter Address" name="address" id="address"> <br>
+        
+        <input type="submit" value="Add Student"><br>
+        <input type="reset" value="Reset"> <br>
+        
+    </form>
+</body>
+</html>
