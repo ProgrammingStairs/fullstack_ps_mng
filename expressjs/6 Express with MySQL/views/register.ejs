@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css"/>
+    <script>
+        (()=>{
+            window.history.forward();
+        })();
+    </script>
 </head>
 <body>
     <center>
@@ -18,16 +23,16 @@
     <hr>
     <h1>Register Form</h1>
     <form action="/user/register" method="post">
-        <input type="text" placeholder="Enter username" name="username" id="username"> <br>
+        <input required type="text" placeholder="Enter username" name="username" id="username"> <br>
 
-        <input type="email" placeholder="Enter email" name="email" id="email"> <br>
+        <input required type="email" placeholder="Enter email" name="email" id="email"> <br>
         
-        <input type="password" placeholder="Enter password" name="password" id="password"> <br>
+        <input required type="password" placeholder="Enter password" name="password" id="password"> <br>
         
-        <input type="text" placeholder="Enter address" name="address" id="address"> <br>
+        <input required type="text" placeholder="Enter address" name="address" id="address"> <br>
 
         <input type="submit" value="Register"> <br>
-        <input type="reset" value="reset"> <br>
+        <input type="reset" value="Reset"> <br>
         <br>
             <a href="/login">
                 Already Registered ? Login Here

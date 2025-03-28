@@ -7,33 +7,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css"/>
     <script>
-        // (function () {
-        //     function preventBack() {
-        //         window.history.pushState(null, "", window.location.href);
-        //     }
-            
-        //     preventBack(); // Push state initially
-        //     window.addEventListener("popstate", preventBack); // Listen for back navigation
-        //     window.addEventListener("hashchange", preventBack); // Detect hash-based changes
-        // })();
         (()=>{
             window.history.forward();
         })();
-</script>
+    </script>
 </head>
 <body>
     <center>
         <h1>
-            Example of Express with MySql
+            Example of Express with MySql | Admin Panel
         </h1>
     </center>
     <hr>
-        <a href="/">Home</a> |
-        <a href="/login">Login</a>
+        <a href="/adminLogin">Login</a>
     <hr>
-    <h1>Login Form</h1>
-    <span style="color:red"><%=message%></span>
-    <form action="/user/userLogin" method="post">
+    <h1>Admin Login Form</h1>
+    <form action="/admin/adminLogin" method="post">
         <input type="email" required placeholder="Enter email" name="email" id="email"> <br>
         
         <input type="password" required placeholder="Enter password" name="password" id="password"> <br>
@@ -41,9 +30,6 @@
         <input type="submit" value="Login"> <br>
         <input type="reset" value="reset"> <br>
         <br>
-        <a href="/register">
-            Yet Not Registered ? Register Here
-        </a>
     </form>
 </body>
 </html>

@@ -1,0 +1,25 @@
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script>
+        (()=>{
+            window.history.forward();
+        })();
+    </script>
+</head>
+<body>
+    <center>
+        <h1>
+            Example of Express with MySql | User Panel
+        </h1>
+    </center>
+    <hr>
+        Welcome <%=userEmail%> |
+        <a href="/user/">Home</a>   |
+        <a href="/user/updateProfile?email=<%=userEmail%>">Update Profile</a>   |  
+        <a href="/user/addToDoForm">Add ToDo</a>    | 
+        <a href="/user/logout">Logout</a>
+    <hr>

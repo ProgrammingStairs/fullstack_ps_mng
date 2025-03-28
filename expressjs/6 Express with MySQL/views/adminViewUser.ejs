@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        (()=>{
+            window.history.forward();
+        })();
+    </script>
+</head>
+<body>
+    <center>
+        <h1>
+            Example of Express with MySql | Admin Panel
+        </h1>
+    </center>
+    <hr>
+        Welcome <%=adminEmail%> |
+        <a href="/admin/">Home</a>   |
+        <a href="/admin/viewUsers">View Users</a>
+    <hr>
+    <h1>Welcome to admin Panel</h1>
+    <h2>User List</h2>
+    <table cellspacing="0" cellpadding="10" border="1">
+        <tr>
+            <th>S.No</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Address</th>
+            <th>Verify</th>
+            <th>Block</th>
+        </tr>
+        <%userList.map((user,index)=>{%>
+            <tr>
+                <td><%=index+1%></td>
+                <td><%=user.username%></td>
+                <td><%=user.email%></td>
+                <td><%=user.password%></td>
+                <td><%=user.address%></td>
+                <td>
+                    <% if(user.adminVerify) {%>
+                        <span style="color:green">Verified</span>
+                    <%}else{%>
+                    <a href="/admin/adminVerifyUser?userId=<%=user.userid%>" style="color: purple">
+                        <%= "Verify" %>
+                    </a>
+                    <%}%>
+                </td>
+                <td>
+                    <% if(!user.status) {%>
+                        <span style="color:green">Blocked</span>
+                    <%}else{%>
+                    <a href="/admin/adminBlockUser?userId=<%=user.userid%>" style="color: purple">
+                        <%= "Block" %>
+                    </a>
+                    <%}%>
+                </td>
+            </tr>
+        <%})%>
+    </table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        (()=>{
+            window.history.forward();
+        })();
+    </script>
+    <%- include('./userHeader.ejs') %>
+    <h1>Add ToDo</h1>
+    <span style="color:green"><%=message%></span>
+    <form action="/user/addToDo" method="post">
+        <textarea required  rows="5" cols="33" placeholder="Enter ToDo" name="todo" id="todo"></textarea> <br>
+
+        <select name="priority" id="priority">
+            <option value="">Select Priority</option>
+            <option value="1">Primary</option>
+            <option value="2">Secondary</option>
+            <option value="3">Ternary</option>
+        </select> <br>
+        <input type="submit" value="Add ToDo"> <br>
+        <input type="reset" value="Reset"> <br>
+        <br>
+    </form>
+</body>
+</html>
