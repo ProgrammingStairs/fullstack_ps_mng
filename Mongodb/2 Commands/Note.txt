@@ -1,0 +1,203 @@
+ In newer versions of the MongoDB shell (mongosh), the output format has changed slightly.
+
+What's Happening?
+Older Versions (mongo shell - Deprecated)
+
+Displayed BSON-like output with double quotes around keys, making it look closer to JSON:
+json
+{
+  "_id": ObjectId("65a2bcde1234f67890abcd12"),
+  "name": "John Doe",
+  "age": 30,
+  "position": "Developer"
+}
+Newer Versions (mongosh - Current MongoDB Shell)
+
+The shell now prints documents in a JavaScript-like object notation (closer to how Node.js handles objects):
+js
+{
+  _id: ObjectId("65a2bcde1234f67890abcd12"),
+  name: "John Doe",
+  age: 30,
+  position: "Developer"
+}
+Notice that key names are no longer wrapped in double quotes, making it look more like a JavaScript object rather than JSON.
+
+Note : -----------------------------------------------------
+
+when we write mongosh in mongo shell how it connect with mongodb server and whats the role of db here ? 
+ChatGPT said:
+How mongosh Connects to MongoDB Server and the Role of db
+When you start mongosh (MongoDB Shell), it establishes a connection to the MongoDB server. Let's break it down step by step:
+
+1. How mongosh Connects to MongoDB Server?
+When you type:
+
+sh
+mongosh
+👉 The shell attempts to connect to the MongoDB server running on localhost:27017 (default port).
+
+Connection Process:
+Checks for MongoDB Server
+
+mongosh looks for a MongoDB server running on mongodb://localhost:27017.
+If a server is running, it connects automatically.
+If a Different Host/Port is Required
+
+You can explicitly specify the host and port:
+sh
+ mongosh "mongodb://your-server-ip:your-port"
+Example:
+sh
+ mongosh "mongodb://127.0.0.1:27018"
+(Connects to MongoDB running on port 27018 instead of 27017.)
+Authentication (If Required)
+If your MongoDB server requires authentication:
+
+sh
+ mongosh "mongodb://username:password@your-server-ip:27017/admin"
+(This connects with a username and password to the admin database.)
+
+2. What is the Role of db?
+Once connected, mongosh assigns db as a global variable representing the current database.
+
+Default Behavior
+When you connect, db refers to the default database (test).
+You can check this by typing:
+js
+ db
+Output:
+sh
+ test
+(Meaning db is pointing to the test database.)
+Switching Databases
+To switch to another database, use:
+
+js
+ use myDatabase
+👉 Now, db refers to myDatabase.
+
+Using db
+Check the current database:
+js
+ db.getName();
+List all collections:
+js
+ db.getCollectionNames();
+Query a collection:
+js
+ db.users.find();
+(Here, db.users refers to the users collection in the currently selected database.)
+Summary
+✅ mongosh connects to MongoDB on localhost:27017 by default.
+✅ db is a global variable that refers to the currently selected database.
+✅ You can switch databases using use <databaseName>.
+
+Let me know if you need more details! 🚀
+
+You said:
+is mongosh creates a socket connection to deal with mongodb server that same socket connection is used by db ? 
+ChatGPT said:
+Does mongosh Create a Socket Connection to MongoDB Server?
+Yes, mongosh (MongoDB Shell) creates a socket connection to the MongoDB server. The same socket connection is used by db to execute commands.
+
+1. How mongosh Establishes a Connection?
+When you start mongosh, it creates a network socket connection to the MongoDB server (mongod process) over TCP/IP (default port 27017).
+
+Steps:
+Initiates a TCP Connection
+
+mongosh uses the MongoDB Wire Protocol to communicate with the database server over a TCP socket.
+By default, it connects to:
+arduino
+ mongodb://localhost:27017
+You can specify a different server:
+sh
+ mongosh "mongodb://your-server-ip:your-port"
+Authenticates (If Required)
+
+If authentication is enabled, it will require credentials to proceed.
+Keeps the Socket Connection Open
+
+Once connected, mongosh maintains a persistent socket connection with the server until you exit.
+The same connection is used for running queries and commands.
+2. What is the Role of db?
+db is a JavaScript variable in mongosh that represents the currently selected database.
+It does not create a new connection; instead, it uses the existing socket connection established by mongosh.
+Example:
+js
+ db.users.find();
+Here, db.users.find() sends a query through the same socket connection that mongosh opened.
+3. Is the Same Connection Used for Multiple Commands?
+Yes!
+
+All commands issued in mongosh share the same socket connection.
+If you type:
+js
+ db.getName();   // Uses the same socket
+db.users.find(); // Uses the same socket
+db.orders.count(); // Uses the same socket
+✔ All commands reuse the same connection, avoiding unnecessary overhead.
+4. When Does the Socket Close?
+The socket connection remains open until:
+
+You exit mongosh (using exit or Ctrl+C).
+MongoDB server (mongod) shuts down.
+A network issue disconnects the client from the server.
+🔹 Summary
+✅ mongosh creates a single socket connection to the MongoDB server.
+✅ All commands (including db operations) use this socket connection.
+✅ The connection remains open until explicitly closed or an error occurs.
+
+Let me know if you need more details! 🚀
+
+You said:
+is mongo shell a client ? 
+ChatGPT said:
+Yes, Mongo Shell (mongosh) is a client for MongoDB.
+
+🔹 What is a Client in MongoDB?
+A client is any application or tool that connects to a MongoDB server (mongod process) to send commands and retrieve data.
+
+🔹 Why is mongosh a Client?
+✔ It connects to the MongoDB server (mongod) over a network socket (typically localhost:27017).
+✔ It sends commands (queries, inserts, updates, deletes) to MongoDB using the MongoDB Wire Protocol.
+✔ It receives responses from the server and displays results in the shell.
+
+🔹 How mongosh Works as a Client?
+You Start the Client (mongosh)
+
+sh
+ mongosh
+This launches the MongoDB shell.
+It tries to connect to the MongoDB server at mongodb://localhost:27017.
+mongosh Establishes a Connection
+
+It creates a TCP/IP socket connection to communicate with the server.
+You Run MongoDB Commands
+
+Example:
+js
+ db.users.find();
+This sends a query request to the server.
+The server processes it and returns the data.
+The Client Receives and Displays Data
+
+The response from the MongoDB server is displayed in the shell.
+Client Stays Connected Until You Exit
+
+The connection remains open until you type:
+sh
+ exit
+Or press Ctrl+C.
+🔹 Other MongoDB Clients
+Apart from mongosh, other MongoDB clients include: ✔ MongoDB Drivers (Node.js, Python, Java, etc.)
+✔ MongoDB Compass (GUI-based client)
+✔ Mongosh in VS Code (MongoDB Extension)
+
+🔹 Summary
+✅ Mongo Shell (mongosh) is a MongoDB client.
+✅ It connects to the MongoDB server, sends commands, and retrieves data.
+✅ It communicates over a network socket using the MongoDB Wire Protocol.
+
+Let me know if you need further clarification! 🚀

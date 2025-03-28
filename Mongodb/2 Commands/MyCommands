@@ -1,0 +1,596 @@
+Commands : 
+----------
+1. show dbs;
+2. use newdb;
+3. use newdbOne;
+4. db.dropDatabase();
+5. db
+6. db.createCollection("Employee");
+7. show collections;
+8. show dbs;
+9. db.createCollection("EmployeeNew");
+10. show collections;
+11. db.EmployeeNew.drop();
+12. show collections;
+13. db.Employee.insert({
+        name:"andrew anderson",
+        age:45,
+        address : "Indore",
+        salary:50000
+    });
+14. db.Employee.insertOne({
+        name:"jack jackson",
+        age:33,
+        address : "Ujjain",
+        salary:40000
+    });
+15. db.Employee.insertMany([{
+        name:"peter parker",
+        age:23,
+        address : "Bhopal",
+        salary:60000
+    },{
+        name:"mathew math",
+        age:12,
+        address : "Ujjain",
+        salary:2000
+    },{
+        name:"kimpson kon",
+        age:56,
+        address : "Indore",
+        salary:80000
+    }]);
+16. db.Employee.bulkWrite( [
+        { 
+            insertOne : 
+                {
+                    name:"peter parker new",
+                    age:23,
+                    address : "Bhopal",
+                    salary:60000
+                }
+        }
+    ] );
+17. db.Employee.bulkWrite( [
+    { 
+        insertOne : 
+        {
+            name:"mathew1 math new",
+            age:12,
+            address : "Ujjain",
+            salary:2000
+        }
+    },{
+        insertOne : 
+        {
+            name:"mathew2 math",
+            age:12,
+            address : "Ujjain",
+            salary:2000
+        }
+    }
+] );
+18. db.Employee.find();
+19. db.Employee.insertOne({
+    "name":"jack jackson",
+    "age":33,
+    "address" : "Ujjain",
+    "salary":40000
+});
+20. db.Employee.insertOne({
+    "_id":"jack@gmail.com",
+    "name":"jack jackson",
+    "age":33,
+    "address" : "Ujjain",
+    "salary":40000
+});
+21. db.Employee.find({age:33});
+22. db.Employee.find({age:33,address:Ujjain'});
+23. db.Employee.update({
+        name:'jack jackson'
+    },{
+        $set:{
+            name:'jackky sheroff'
+        } 
+    });    
+24. db.Employee.updateOne({
+        name:'jackky sheroff'
+    },{
+        $set:{
+            name:'jack jackson'
+        } 
+    });    
+25. db.Employee.updateMany({
+        name:'jack jackson'
+    },{
+        $set:{
+            name:'jackky sheroff'
+        } 
+    });    
+26. db.Employee.update({
+        name:'jackky sheroff'
+    },{
+        $set:{
+            name:'jack jackson'
+        } 
+    },{multi:true});    
+27. db.Employee.update({},{
+        $set : {
+            state:"mp"
+        }
+    });
+28. db.Employee.updateMany({},{
+        $set : {
+            state:"mp"
+        }
+    });
+29. db.Employee.update({
+        name:"andrew anderson"
+    },{
+        $set : {
+            state:"gujrat"
+        }
+    });
+30. db.Employee.updateMany({},{
+        $unset : {
+            state:""
+        }
+    });
+31. db.Employee.remove({
+        name : 'jack jackson'
+    });
+32. db.Employee.deleteMany({
+        address:'Ujjain'
+    });
+33. db.Employee.find({},{
+        name:1,
+        address:1 
+    });
+34. db.Employee.find({},{
+        name:1,
+        address:1,
+        _id:0 
+    });
+35. db.Employee.find({
+        age : {
+            $eq : 23
+        } 
+    });
+36. db.Employee.find({
+        age : {
+            $gt : 23
+        } 
+    });
+37. db.Employee.find({
+        age : {
+            $gte : 23
+        } 
+    });
+38. db.Employee.find({
+        age : {
+            $lt : 23
+        } 
+    });
+39. db.Employee.find({
+        age : {
+            $lte : 23
+        } 
+    });
+40. db.Employee.find({
+        age : {
+            $ne : 23
+        } 
+    });
+41. db.Employee.find({age:{$exists:true}});
+42. db.Employee.find({username:{$exists:false}});
+43. db.Employee.find( { age: { $exists: true, $nin: [ 5, 15 ] } } );
+44. db.Employee.find( { age: { $exists: true, $nin: [ 23, 45 ] } } );
+45. db.Employee.find( { age: { $exists: true, $in: [ 56 ] } } );
+46. db.Employee.find({
+        $or : [
+                {
+                    address : "USA"
+                },
+                {
+                    age : {
+                        $gt : 40
+                    }
+                }
+           ] 
+    });
+47. db.Employee.find({
+    $and : [
+            {
+                address : "USA"
+            },
+            {
+                age : {
+                    $gt : 40
+                }
+            }
+       ] 
+});
+48. db.Employee.find({
+    $and : [
+            {
+                address : "Indore"
+            },
+            {
+                age : {
+                    $gt : 40
+                }
+            }
+       ] 
+});
+
+49. db.Employee.find( { 
+        age: { 
+            $not: { 
+                $gt: 40 
+            } 
+        } 
+    } );
+50. db.Employee.find({
+    $nor : [
+            {
+                address : "Indore"
+            },
+            {
+                age : {
+                    $gt : 40
+                }
+            }
+       ] 
+});
+51. db.Employee.updateOne({name:'peter parker new'},{$set:{age:75}});
+52. db.Employee.updateOne({name:'peter parker new'},{$set:{address:'Dewas'}});
+53. db.Employee.find({
+        $and : [
+            {
+                salary : {
+                    $gt : 50000
+                }
+            },{
+                $or : [
+                    {
+                        age : {
+                            $gt : 50
+                        }
+                    },
+                    {
+                        address :{
+                            $ne : 'dewas'
+                        }
+                    }
+                ]             
+            }
+        ] 
+});
+54. db.Employee.find().toArray()[0];
+    db.Employee.find().toArray()[1];
+    db.Employee.find().toArray()[2];
+55. db.Employee.find().count();
+56. db.Employee.find().limit(2);
+57. db.Employee.find().skip(3);
+58. db.Employee.find().sort({}); 
+59. db.Employee.find().sort({age:1});
+    db.Employee.find().sort({age:-1});
+60. db.Employee.insertOne({
+        name:"peter parker",
+        age:23,
+        address : "Ujjain",
+        salary:40500
+    });
+61. db.Employee.find().sort({age:1,address:-1});
+62. db.Employee.find().sort({salary:-1});        
+    db.Employee.find().sort({salary:-1}).toArray()[0];
+    
+    // highest salary holder name
+    db.Employee.find().sort({salary:-1}).toArray()[0].name;
+
+63. db.Employee.find().sort({salary:-1}).toArray()[0].salary;
+    db.Employee.find({
+        salary : {
+            $ne : db.Employee.find().sort({salary:-1}).toArray()[0].salary
+        }
+    }).sort({salary:-1}).toArray()[0];
+
+    // second highest salary
+    db.Employee.find({
+        salary : {
+            $ne : db.Employee.find().sort({salary:-1}).toArray()[0].salary
+        }
+    }).sort({salary:-1}).toArray()[0].name; 
+
+64. db.Employee.find({
+        salary : {
+            $ne : db.Employee.find().sort({salary:-1}).toArray()[0].salary
+        }
+    }).sort({salary:-1}).toArray()[0].salary;
+
+    // third highest salary
+    db.Employee.find({
+        salary : {
+            $lt : db.Employee.find({
+                salary : {
+                    $ne : db.Employee.find().sort({salary:-1}).toArray()[0].salary
+                }
+            }).sort({salary:-1}).toArray()[0].salary
+        }
+    }).sort({salary:-1}).toArray()[0].name;
+
+65. db.Employee.aggregate([
+        {
+            $group:{
+                _id : "$name",
+                salary : {$min : "$salary"}
+            }
+        }
+    ]);
+
+    db.Employee.aggregate([
+        {
+            $group:{
+                _id : "$name",
+                salary : {$max : "$salary"}
+            }
+        }
+    ]);
+
+66. db.Employee.aggregate([
+    {
+        $group:{
+            _id : "$name",
+            total_entries : {$sum : 1}
+        }
+    }
+]);
+
+db.Employee.aggregate([
+    {
+        $group:{
+            _id : "",
+            total_entries : {$sum : 1}
+        }
+    }
+]);
+
+db.Employee.aggregate([
+    {
+        $group:{
+            _id : "",
+            salary_total : {$sum : "$salary"}
+        }
+    }
+]);
+
+db.Employee.aggregate([
+    {
+        $group:{
+            _id : "$name",
+            salary_total : {$sum : "$salary"}
+        }
+    }
+]);
+
+db.Employee.aggregate([
+    {
+        $group:{
+            _id : "$name",
+            salary_total : {$avg : "$salary"}
+        }
+    }
+]);
+
+db.Employee.aggregate([
+    {
+        $group:{
+            _id : "$name",
+            salary_total : {$sum : "$salary"},
+            age : {$sum:"$age"}
+        }
+    }
+]);
+
+67. db.Employee.aggregate([
+    {
+        $group:{
+            _id : "$name",
+            salary_total : {$sum : "$salary"},
+            age : {$sum:"$age"}
+        }
+    },{
+        $project:{
+            name : "$_id",
+            salary_total : 1,
+            age : 1,
+            _id:0
+        }
+    }
+]);
+
+68. db.Employee.aggregate([
+    {
+        $group:{
+            _id : "$name",
+            salary : {$avg : "$salary"},
+            age : {$avg:"$age"}
+        }
+    },{
+        $project:{
+            name : "$_id",
+            salary : 1,
+            age : 1,
+            _id:0
+        }
+    }
+]);
+
+69. db.Employee.aggregate([
+    {
+        $group:{
+            _id : "",
+            minimum_salary : {$min : "$salary"},
+        }
+    },{
+        $project:{
+            _id:0
+        }
+    }
+]);
+
+db.Employee.aggregate([
+    {
+        $group:{
+            _id : "$name",
+            minimum_salary : {$min : "$salary"},
+        }
+    },{
+        $project:{
+            name:"$_id",
+            minimum_salary : 1,
+            _id:0
+        }
+    }
+]);
+
+db.Employee.aggregate([
+    {
+        $group:{
+            _id : "$name",
+            maximum_salary : {$max : "$salary"},
+        }
+    },{
+        $project:{
+            name:"$_id",
+            maximum_salary : 1,
+            _id:0
+        }
+    }
+]);
+
+70. 
+db.Employee.aggregate([
+    {
+        $group:{
+            _id : "",
+            maximum_salary : {$max : "$salary"},
+        }
+    },{
+        $project:{
+            _id:false
+        }
+    }
+]);
+
+71. db.Employee.aggregate([
+    {
+        $group:{
+            _id : "$name"
+        }
+    }
+]);
+
+db.Employee.aggregate([
+    {
+        $group:{
+            _id : "$name"
+        }
+    },
+    { $sort: { _id: 1 } },
+    {$skip:2}
+]);
+
+db.Employee.aggregate([
+    {
+        $group:{
+            _id : "$name"
+        }
+    },{$limit:2}
+]);
+
+72. db.Employee.aggregate([
+    {
+        $group:{
+            _id : "$salary",
+            age : { $first:"$age"}
+        }
+    }
+    ]);
+
+    db.Employee.aggregate([
+        {
+            $group:{
+                _id : "$salary",
+                age : { $last:"$age"}
+            }
+        }
+        ]);
+
+73. db.Employee.insertOne({name:"T-shirt",sizes:["small","medium","large"]});
+    db.Employee.aggregate( [ { $unwind: "$sizes"  } ] )
+
+74. db.createCollection("product");
+    db.createCollection("category");
+    db.product.insertMany([
+        {
+            name:"fan",
+            price:15000,
+            product_id:'PROD001',
+            category_id:100
+        },{
+            name:"fairness cream",
+            price:18000,
+            product_id:'PROD002',
+            category_id:200
+        },{
+            name:"rice",
+            price:13000,
+            product_id:'PROD002',
+            category_id:300
+        }
+    ]);
+
+    db.category.insertMany([
+        {
+            name:"Electronics",
+            cat_id:100
+        },
+        {
+            name:"Cosmatics",
+            cat_id:200
+        }
+    ]);
+
+    db.product.aggregate([
+        {
+            $lookup:{
+                from : "category",
+                foreignField:"cat_id",
+                localField:"category_id",
+                as : "Product Details"
+            }
+        }
+    ]);
+
+    db.product.aggregate([
+        {
+            $lookup:{
+                from : "category",
+                foreignField:"cat_id",
+                localField:"category_id",
+                as : "Product Details"
+            }
+        },{
+            $match:{
+                price:{
+                    $gte:15000
+                }
+            }
+        }
+    ]);
+
+75. db.Employee.createIndex({address:1});
+    db.Employee.getIndexes();
+    db.Employee.insert({name:'testdemo',expireAt:new Date()});
+    db.Employee.createIndex({expireAt:1},{expireAfterSeconds:10});

@@ -1,0 +1,19 @@
+{
+  "name": "4-mongodb-with-nodejs-inserting-data-into-database-through-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "mongodb": "^6.15.0",
+    "nodemon": "^3.1.9"
+  }
+}

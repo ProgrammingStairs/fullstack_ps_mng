@@ -1,0 +1,650 @@
+                                                            -----------------------------------------------------------------------------------------
+                                                                                COMMANDS AND EXAMPLE
+                                                            -----------------------------------------------------------------------------------------
+In Ubuntu : 
+------------------
+Refer digital ocean site to install mongodb on ubuntu.
+or
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+
+In Windows :   
+----------------------
+we need two command prompts, one first command prompt, we need to start mongodb server by mongod command
+and on second command prompt, we need to open mongo shell(mongodb client) for writing queries by mongo command.
+
+[ REFERENCE LINK ]  https://youtu.be/FwMwO8pXfq0
+
+click on the link https://www.softwaretestinghelp.com/mongodb/install-mongodb/   then click on Windows [32-bit]
+or 
+directly use this link https://www.mongodb.org/dl/win32/i386 
+then click on the first link on this page. and follow the instruction and install it till installation is not finished.
+
+then check, whether your mongodb installed or not---
+C drive --> Program Files --> MongoDB --> Server --> 3.2 --> bin
+
+/*----------------------on FIRST COMMAND PROMPT--------------------------*/
+
+then copy the path till bin folder and open command prompt(window + r ---> cmd ----> enter)
+then you get --->  C:\users\kotharigaurav> 
+then write ----> cd C:\Program Files\MongoDB\Server\3.2\bin ---> enter
+
+then this will show on your command prompt---> C:\Program Files\MongoDB\Server\3.2\bin> 
+then write --> mongod ----> enter
+
+/*
+
+if you get exception, then most probably error will be-----
+
+MongoDB server failing to start with the following error:
+2015-12-13T00:49:12.191+0600 I CONTROL [initandlisten] options: {}
+2015-12-13T00:49:12.195+0600 I STORAGE [initandlisten] exception in
+initAndListen: 28663 Cannot start server. The default storage engine 'wiredTiger' is not available with this build of mongod. 
+Please specify a different storage engine explicitly, e.g. --storageEngine=mmapv1., terminating 2015-12-13T00:49:12.195+0600 
+I CONTROL [initandlisten] dbexit: rc: 100
+
+[ Solution link ]   https://stackoverflow.com/questions/34243731/mongodb-cannot-start-server-the-default-storage-engine-wiredtiger-is-not-avai
+
+solution : Well... There appears to be a version conflict: you are probably running a 32bit version of Mongo. Just do as they 
+say and actually use the other default storage engine:
+
+Write the command as follows in your Mongo/bin directory:
+
+so we need to write this --->  mongod --storageEngine=mmapv1 --dbpath=C:\data\db\ --> enter
+
+in this way your mongodb server  is started when your mongod (Mongo Daemon) runs.
+*/
+
+but if you get  exception, then exception will be-----
+Data directory C:\data\db\ not found
+
+so for that, we need to go back to C drive --> then create data folder --> then inside data folder ---> create db folder.
+then come on command prompt and again write -->  mongod ---> enter
+
+in this way your mongodb server  is started when your mongod (Mongo Daemon) runs.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Now for opening mongodb client , we need to run mongo.
+
+/*------------------------------------------on SECOND COMMAND PROMPT------------------------------------------*/
+
+now open second command prompt,for opening mongo shell. 
+then copy the path till bin folder of mongodb and open command prompt(window + r ---> cmd ----> enter)
+then you get --->  C:\users\kotharigaurav> 
+then write ----> cd C:\Program Files\MongoDB\Server\3.2\bin ---> enter
+
+then this will show on your command prompt---> C:\Program Files\MongoDB\Server\3.2\bin> 
+then write --> mongo ----> enter
+in this way your mongo shell(mongodb client) is going to be open.
+now, we write queries here to deal with mongodb database.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[ SUMMARY ]
+
+For window:
+on first command prompt --> 
+C:\users\kotharigaurav> cd C:\Program Files\MongoDB\Server\3.2\bin ---> enter
+then C:\Program Files\MongoDB\Server\3.2\bin> mongod ----> enter
+
+on second command prompt --> 
+C:\users\kotharigaurav> cd C:\Program Files\MongoDB\Server\3.2\bin ---> enter
+then C:\Program Files\MongoDB\Server\3.2\bin> mongo ----> enter
+
+For Ubuntu:
+root@123(by default jo bhi path ho root ka) # sudo service mongod start ---> enter
+root@123(by default jo bhi path ho root ka) # mongo
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[ NOTE ] If there is an error occur due to unexpected shutdown, then use the below command to recover : 
+mongod --repair
+ or
+ c:\data\db\ k andar mongod.lock file ko delete karo or phir se mongod command chala do
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[ NOTE ]    What is Mongod command?
+[ Answer ] mongod(mongod means Mongo Daemon) is a background process used by MongoDB. The main 
+purpose of mongod is to manage all the MongoDB server tasks. For instance, accepting requests, responding to client, 
+and memory management. 
+
+Assuming that you have started mongo daemon, let us learn how to start mongo shell.
+To start mongo shell, open command prompt or terminal and run the following command.
+
+mongo
+
+mongo shell will connect to mongo daemon running on your pc at the default port 27017.
+
+mongo command opens command line shell that can interact with the client (for example, system administrators and developers).
+and connects to a specific instance of mongod.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[ NOTE ] To view mongo version, use command : mongod -version or mongod --version
+[ NOTE ] A number of databases can be run on a single MongoDB server. Default database of MongoDB is 'test'. Run db command to refer to the current database object or connection. To connect to a particular database, run use command.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                                                                    BASIC COMMANDS FOR MongoDB
+                                                                                    -----------------------------------------------------------
+
+command 1 : show all databases(list of all databases) --> show dbs
+(if there is no data inside database, then the entry of that database is not shown by show dbs)
+
+command 2 : create new database --> use DATABASE_NAME
+(creates database if not exists)
+
+command 3 : Know your current selected database --> db
+(Run db command to refer to the current database object or connection)
+db current database k object ko represent karta he. or current database ka object he.
+
+command 4 : drop database(drop the selected database) --> db.dropDatabase()
+
+command 5 : create collection --> db.createCollection(name) 
+
+/*
+    collection are of two types : 
+        1) caped collection
+        2) uncaped collection
+
+    1) caped collection : collection with boundation is called caped collection.
+    Boundation related to------
+            |-- total number of documents(Records | objects)
+            |-- total size of records
+            |-- Auto index enabling options
+            |-- Only data will be added
+            |-- no modification and no Deletion
+    Ex : db.createCollection("Employer",{max : 100000, size : 1000, capped : true})
+    Here Employer is collection name
+    max means 100000 bytes se jyada data aaya to error aaegi.
+    size means 1000 objects.
+
+    2) uncaped collection :    collection with no boundation is called uncaped collection.
+            |-- restricted less collection
+            |-- not boundation
+            |-- add modify delete 
+    Ex : db.createCollection("Employer")
+*/
+
+command 6 : To check collections list --> show collections
+
+command 7 : Drop collection --> db.COLLECTION_NAME.drop()
+Ex: db.employer.drop();
+here db is an current database object
+employer is a collection(treated as a property of database object db)
+
+command 8 : Insert document in collection --> db.COLLECTION_NAME.insert(document)
+Ex : db.Employer.insert({name : 'Emp1' , address : 'Pune'})
+
+/*
+
+    For single entry,  insert({}) me single record insert ho jaega
+    aur insert([{},{}]) me multiple records bhi insert ho jaenge
+    But For multiple entries,we prefer insertMany([{},{}])
+            |-- here we use array of object
+            |-- here data is in json form
+            |-- {} first json object, {} second json object etc etc.
+    but insertOne me ek he record insert hota he, but if we try to write insertOne([{},{}]) then ye array ki error dega,
+    but if we write in this way insertOne({},{}) then ye sirf first entry ko insert kar dega. 
+*/
+
+Insert multiple documents in collection --> db.COLLECTION_NAME.insertMany([document1,document2,etc])
+Ex : db.Employer.insertMany([{name : 'Emp1' , address : 'Pune'},{name : 'Emp2' , address : 'Mumbai'}])
+
+/*
+vary in different different versions
+    db.COLLECTION_NAME.insert ---> enter
+                db.COLLECTION_NAME.insert(
+                    db.COLLECTION_NAME.insertOne(
+                        db.COLLECTION_NAME.insertMany(
+*/
+/*
+The _id is similar to an SQL primary key.
+*/
+
+
+command 9 : Get collection document --> db.COLLECTION_NAME.find()
+                         --> db.COLLECTION_NAME.find().pretty()
+(here we use find() method to fetch result)
+(if we create any collection, then mongodb, documents ko uniquely identify karne k liye _id bana kar deta he. we can 
+make id explicitly also. with this _id, we do have any problem.)
+
+/*
+
+    Replacement of where clause
+ //   select * from employer where skill='ror'
+
+    db.COLLECTION_NAME.find(SELECTION_CRITERIA)
+    db.employer.find({skill : 'ror'})
+    db.employer.find({skill : 'ror'}).pretty()
+
+    Multiple columns par check : 
+    db.employer.find({skill : 'ror' , age : 28}).pretty()
+    here ' , ' represents 'and' and ' : ' represents equals 
+    
+*/
+
+command 10 : update document --> db.COLLECTION_NAME.update(SELECTION_CRITERIA,UPDATED_DATA) if selection
+criteria matches multiple records , then also it will update only first record.  
+Ex : db.employer.update({name : 'Emp1'},{$set : {name : 'New Emp1'}})
+
+db.COLLECTION_NAME.update(SELECTION_CRITERIA,UPDATED_DATA,{multi : true}) if selection criteria matches multiple 
+records , then for updating all records, we need to write {multi : true}   
+Ex : db.employer.update({name : 'Emp1'},{$set : {name : 'New Emp1'}},{multi : true})
+
+/*
+Field insertion and removal
+---------------------------------------------
+Insertion: 
+----------------
+db.Employer.update({},{ $set:{"state":"mp"} })
+db.Employer.update({},{ $set:{"state":"mp"} },{multi : true})
+db.Employer.update({name : 'Nikita Kothari'},{ $set:{"country":"india"} })
+
+Removal:
+---------------
+db.Employer.update( {},{ $unset: {"state": ""}})
+db.Employer.update( {},{ $unset: {"state": ""}},{multi : true})
+db.Employer.update( {name : 'Nikita Kothari'},{ $unset: {"country": ""}})
+
+*/
+
+
+command 11 : delete document --> db.COLLECTION_NAME.remove(DELETION_CRITERIA)
+Ex : db.employer.remove({name : 'Emp3'})
+
+command 12 : collection count -->   
+
+command 13 : Retrieve limited number of records --> db.COLLECTION_NAME.find().limit(number)
+
+-----------------------------------------------------------------------------------
+Projection In MongoDB : 
+----------------------------------------
+In MongoDB, projection means selecting only the necessary data rather than selecting whole of the data of a document. If a document has 5 fields and you need to show only 3, then select only 3 fields from them.
+
+// select id, name, skill from employer
+command 14 :  Only selected columns need to fetch --> db.COLLECTION_NAME.find(SELECTION_CRITERIA,PROJECTION)
+db.employer.find({},{name : 1, address : 1}).pretty()  here _id also comes
+db.employer.find({},{name : 1, address : 1, _id : 0}).pretty()  here _id does not comes
+here {} is SELECTION_CRITERIA
+and {name : 1, address : 1, _id : 0} is PROJECTION
+here 1 means Include the field:value in Result
+and 0 means does not Include the field:value in Result
+
+here 1 is just like where =1 in normal queries.
+-----------------------------------------------------------------------------------
+Comparision Operator : 
+---------------------------------------
+MongoDB	    |    SQL	    |   Description
+-------------------------------------------------------------------------------------------------------------------------------------------------
+$eq	             =	      Matches values that are equal to a specified value.
+$gt	             >	      Matches values that are greater than a specified value.
+$gte	           >=	    Matches values that are greater than or equal to a specified value.
+$lt	             <	      Matches values that are less than a specified value.
+$lte	           <=	    Matches values that are less than or equal to a specified value.
+$ne	             !=	    Matches all values that are not equal to a specified value.
+$in               ex : $in : [23]
+$nin              ex : $nin : [34,45] 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Logical Operators : 
+-------------------------------
+MongoDB	 | SQL|  Description
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+$or	      or	  Joins query clauses with a logical OR returns all documents that match the conditions of either clause.
+
+$and	    and	  Joins query clauses with a logical AND returns all documents that match the conditions of both clauses.
+
+$not	    not	   Inverts the effect of a query expression and returns documents that do not match the query expression.
+
+$nor		 ------     Joins query clauses with a logical NOR returns all documents that fail to match both clauses.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Usage Of Cursor In MongoDB // https://www.softwaretestinghelp.com/mongodb/cursor-in-mongodb/
+-------------------------------------------------
+The Cursor is a MongoDB Collection of the document which is returned upon the find method execution.
+By default, it is automatically executed as a loop. However, we can explicitly get specific index document from being returned cursor. It is just like a pointer which is pointing upon a specific index value.
+
+In simple words when we call a find method, all the documents which are returned are saved in a virtual cursor. If a find method returns for a document then it is mean that the cursor has  indexing for the documents which it returns.
+
+we will first check by db.COLLECTION_NAME.find() that how many documents we have in our MongoDB collectionof documents(cursor).
+
+Then we will call a specific index which is returned by a cursor upon the execution of the find method with the following code.
+
+// db.COLLECTION_NAME.find()[0]
+// db.COLLECTION_NAME.find()[1]
+// db.COLLECTION_NAME.find()[2]
+
+ db.COLLECTION_NAME.find().toArray()[0]
+ db.COLLECTION_NAME.find().toArray()[1]
+ db.COLLECTION_NAME.find().toArray()[2]
+
+etc.
+
+Count Cursor
+--------------------
+Count method will help us to retrieve how many records are available within a cursor.
+db.COLLECTION_NAME.find().count()
+
+Cursor limit
+-------------------
+A cursor may have thousands of documents, but we need only 2 documents so that we can limit the cursor up to 2 documents.
+db.COLLECTION_NAME.find().limit(2)
+db.COLLECTION_NAME.find().skip(3)
+
+/*
+MongoDB natively supports the paging operation using the skip() and limit() commands. The skip(n) directive tells MongoDB that it should skip 'n' results, and the limit(n) directive instructs MongoDB that it should limit the result length to 'n' results.
+*/
+
+Cursor Prettify
+-----------------------
+It is used to make the fetched document readable. When we execute the find method, it will return all the available documents row by row. When we append pretty method with the find method, then it will return all the documents in the form of JSON which makes data easily understandable.
+
+db.COLLECTION_NAME.find().pretty()
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Sorting (Ascending Order | Descending Order) // https://www.tutorialkart.com/mongodb/mongodb-sort-documents/
+------------------------------------------------------------------------------
+we use sort() method here.
+[ Note ] db.collection.find() returns cursor to the records. And sort() method can be applied on this cursor to sort the documents in increasing or decreasing order. [ cursor.sort() method ]
+
+db.COLLECTION_NAME.find().sort({}) // By default the documents are ordered by _id in ascending order.
+
+db.COLLECTION_NAME.find().sort({FIELD:ORDER}) 
+Here 1	Ascending (Increasing) Order
+-1	Descending (Decreasing) Order
+
+Example : Sort with multiple filed:order pairs
+> db.customers.find().sort({"age":1,"name":1});
+{ "_id" : ObjectId("59edffea5f82df4555f2bfaf"), "name" : "Manju", "age" : 23 }
+{ "_id" : ObjectId("59edffea5f82df4555f2bfac"), "name" : "Midhuna", "age" : 23 }
+{ "_id" : ObjectId("59edffea5f82df4555f2bfad"), "name" : "Akhil", "age" : 24 }
+{ "_id" : ObjectId("59edffea5f82df4555f2bfb0"), "name" : "Bharat", "age" : 24 }
+{ "_id" : ObjectId("59edffea5f82df4555f2bfb1"), "name" : "Arya", "age" : 25 }
+> db.customers.find().sort({"age":1,"name":-1});
+{ "_id" : ObjectId("59edffea5f82df4555f2bfac"), "name" : "Midhuna", "age" : 23 }
+{ "_id" : ObjectId("59edffea5f82df4555f2bfaf"), "name" : "Manju", "age" : 23 }
+{ "_id" : ObjectId("59edffea5f82df4555f2bfb0"), "name" : "Bharat", "age" : 24 }
+{ "_id" : ObjectId("59edffea5f82df4555f2bfad"), "name" : "Akhil", "age" : 24 }
+{ "_id" : ObjectId("59edffea5f82df4555f2bfb1"), "name" : "Arya", "age" : 25 }
+
+The command db.customers.find().sort({"age":1,"name":1});  first sorted the documents based on age in ascending order, then the documents with same age value are sorted in ascending order.
+
+The command db.customers.find().sort({"age":1,"name":-1});  first sorted the documents based on age in ascending order, then the documents with same age value are sorted in descending order.
+
+name : "andrew" age : 34
+name : "andrew" age : 68
+name : 1 age : -1
+agar same name he or age different he to us case me name k ascending order hone par agar age -1 he to vo descending order me print hogi like this : 
+name : "andrew" age : 68
+name : "andrew" age : 34
+
+but agar same name he or age different he to us case me name k ascending order hone par agar age 1 he to vo ascending order me print hogi like this : 
+name : "andrew" age : 34
+name : "andrew" age : 68
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[ Note ] { name : 'Andrew mathew' } here name is field and Andrew mathew is value
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Some queries related to find out highest value and records corresponding to that highest value.
+Ex : db.COLLECTION_NAME.find().toArray()[o].salary etc etc
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Delete Record:
+------------------------
+Deletion takes place by primary key _id or any specific field.
+
+Aggregrate Function:(min,max,avg,sum etc etc)
+--------------------------------------------------------------------------------
+Aggregrations operations process data records and return computed results.Aggregration operations group values from multiple documents together, and can perform variety of operations on the grouped data to return a single result.
+
+[NOTE] In sql, group by clause is a sql command, that is used to group rows that have the same values. 
+
+Stages of Mongodb Aggregation Pipeline
+(https://data-flair.training/blogs/mongodb-aggregation-tutorial/)
+https://docs.mongodb.com/manual/reference/operator/aggregation/lookup/
+---------------------------------------------------------------------
+There are many Stages of  Aggregation of Pipeline in Mongodb, some of them are : 
+1. $project : Used to select certain fields from collection.
+2. $match : Used in filtering operation.
+3. $group : It groups all documents based on some keys.
+4. $sort : It is used to sort all documents.
+5. $skip & $limit :  Used to skip entries and limit is used to limit entries.
+6. $first & $last : It is used to get first and last values in each group of documents.
+7. $unwind : we can use unwind for all documents, that are using arrays.
+8. $lookup : which can perform a LEFT-OUTER-JOIN-like operation on two or more collections.
+----------------------------------------------------------------------------------------------------------------------------------------------
+Node.js MongoDB Join()   [ Must Read the topic : "Defining Relationship between documents" given below ]
+---------------------------------------
+Join Collections : 
+MongoDB is not a relational database, but you can perform a left outer join by using the $lookup stage.
+The $lookup stage lets you specify which collection you want to join with the current collection, and which fields that should match.
+
+[note]
+MongoDB 3.2 introduces a new $lookup stage which can perform a LEFT-OUTER-JOIN-like operation on two or more collections.
+
+We can now join data from the user collection using the new $lookup operator. It requires an object with four parameters:
+
+localField: the lookup field in the input document
+----------------
+from: the collection to join
+---------
+foreignField: the field to lookup in the from collection
+---------------------
+as: the name of the output field.
+-----
+-----------------------------------------------------------------------------------------------------------------------------
+Indexing in mongodb
+------------------------------------
+Indexes are a special data structures used to locate the record in the given table very quickly without being required to traverse through every record in the table. MongoDB uses these indexes to limit the number of documents that had to be searched in a a collection. The data structure that is used by an index is a binary tree.
+
+|---- Default Index  : In mongoDB indexing, all the collections have a default index on the _id field.
+|---- Create an Index : In mongoDB , a user can create indexes using the following syntax : 
+    db.COLLECTION_NAME.createIndex({ field_name : order})
+    here order is either 1 or -1, where 1 represents ascending order and -1 represents descending order.
+
+ Types of Index
+ -------------------------
+ 1) Single Field Index : A single field index is used to create an index on the single field of a document.
+ with single field index, mongodb can traverse in ascending and descending order.
+db.Employer.createIndex({name : 1})
+
+ 2) Compound Index : MongoDB supports a userdefined index on multiple fields as well.
+ For Example : If a compound index consists of {"name" : 1 , "city" : 1}, then the index will sort first the name and then the city.
+db.Employer.createIndex({name : 1,address : 1})
+
+ 3) Text Index : Text Index supports searching for string content in a collection.
+ db.COLLECTION_NAME.createIndex({ field : value}) 
+  Example : db.Employer.createIndex({ name : "text"}) 
+  or
+ A collection can have at most one text index.
+To create a text index, use the db.collection.createIndex() method. To index a field that contains a string or an array of 
+string elements, include the field and specify the string literal "text" in the index document.
+
+4) multikey index
+5) hashed index
+  etc etc
+
+  MongoDB index Properties
+  ----------------------------------------------
+  a)  Unique indexes
+  -------------------------------
+  A unique property of indexes restrict it to insert the duplicate value of an indexed field.
+  Ex : 
+  db.COLLECTION_NAME.createIndex({field : 1}, {unique : true})
+
+b) TTL Indexes
+-------------------------
+TTL or 'TOTAL TIME TO LIVE' indexes are used to auto delete document from collection after the specified
+time duration.This property is ideal for certain types of information like machine generated data, logs 
+and session information that only needs to be there for a finite amount of time in a database.
+
+Ex : db.COLLECTION_NAME.createIndex({field : 1},{expireAfterSeconds : 35})
+
+Finding The indexes in a  collection : db.COLLECTION_NAME.getIndexes()
+----------------------------------------------------------
+Drop Indexes in a collection :    |-- db.COLLECTION_NAME.dropIndex({index_name : 1})
+-----------------------------------------------     |-- db.COLLECTION_NAME.dropIndexes()
+
+[note] The message "non _id indexes dropped for collection" indicates that the default index _id will still remains
+and cannot be dropped. This means that using this method we can only drop indexes that we have created, we
+cannot drop the default index created on _id field.
+
+[note] ok : 1 in output means the command is executed successfully.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+Defining Relationship between documents (https://data-flair.training/blogs/mongodb-relationships/)
+--------------------------------------------------------------------------
+In MongoDB, you can create a relationship using the following methods:
+
+1) Embedded Relationships
+2) Documented Reference Relationships
+
+i. Embedded Relationships in MongoDB
+--------------------------------------------------------------------
+The benefit of using the above method is performance. If it will be embedded within the documents, queries will run faster than if we spread them on multiple documents. This will provide acceleration in the performance, especially with a large amount of data.
+
+Here, in embedded relationships, we will discuss two types of model:
+
+1) One-to-one relationship
+2) One-to-many relationship
+
+a. One to One Relationship in MongoDB
+--------------------------------------------------------------------
+It is where the parent document has one child, and the child has one parent. With the help of an example, we will learn about this one to one relationship.
+
+db.singers.insert(
+  {
+     _id : 2,
+     artistname : "XYZ",
+     address : {
+                  street : "Apollo Street",
+                  city : "Mumbai",
+                  state : "Maharashtra",
+                  country : "India"
+                }
+    }
+)
+After executing the following command we will get the following output:
+
+WriteResult({ “nInserted” : 1 })
+
+b. One to Many Relationships in MongoDB
+----------------------------------------------------------------------
+It is a MongoDB relationship, in which a parent can have many child documents in it. But child document can have only one parent. We will take an example to understand the following relationship.
+
+db.singers.insert(
+  {
+     _id : 3,
+     artistname : "XYZ",
+     albums : [
+             {
+               album : "DEF",
+               year : 2000,
+               genre : "Blues"
+               }, 
+               {
+                    album : "ABC",
+                    year : 2013,
+                    genre : "Classical Music"
+               }
+          ]
+     }
+)
+After executing the following code, we will get the following result:
+
+WriteResult({ “nInserted” : 1 })
+
+ii. Document Referenced Relationships in MongoDB
+---------------------------------------------------------------------------------------
+Rather than implanting a child document into the parent document, we separate the child and parent document respectively. When data needs to be repeated across many documents, it is helpful to have them in their own separate document. This reduces error and keeps data consistent. We will take an example to understand this relationship in a better manner.
+
+a. Parent Document
+---------------------------------
+db.singers.insert(
+  {
+    _id : 4,
+    artistname : "UVW"
+   }
+)
+
+b. Child Documents
+--------------------------------
+Here we will add 3 documents.
+
+db.instruments.insert(
+{
+    _id : 9,
+    singer_name : "GHI",
+    instrument : [ "Accordion", "Jaw Harps", "Keyboards" ],
+    artist_id : 4
+  }
+)
+db.instruments.insert(
+  {
+    _id : 10,
+    name : "ABC",
+    instrument : [ "Banjo", "Cello" ],
+    artist_id : 4
+  }
+)
+db.instruments.insert(
+ {
+    _id : 11,
+    name : "LMN",
+    instrument : "Membranophones",
+    artist_id : 4
+  }
+)
+
+c. Querying the MongoDB Relationships
+--------------------------------------------------------------------
+After inserting these documents now we will use $lookup to perform left outer join on the two collections.
+
+Here, we will use aggregate() method and $match, so that we get the details of artist, and we get the child and parent documents together.
+
+db.singers.aggregate([
+  {
+     $lookup:
+       {
+         from: "instruments",
+         localField: "_id",
+         foreignField: "artist_id",
+         as: "band_members"
+       }
+        },
+        { $match : { artistname : "UVW" } }
+]).pretty()
+
+After executing the code we will get the following output:
+
+{
+“_id” : 4,
+“artistname” : “UVW”,
+“band_members” : [
+{
+“_id” : 9,
+“singer_name” : “GHI”,
+“instrument” : [ “Accordion”, “Jaw Harps”, “Keyboards” ],
+“artist_id” : 4
+},
+{
+“_id” : 10,
+name : “ABC”,
+instrument : [ “Banjo”, “Cello” ],
+artist_id : 4
+},
+{
+“_id” : 11,
+“name” : “LMN”,
+“instrument” : “Membranophones”,
+“artist_id” : 4
+}
+]
+}
+
+We can see that 2 fields are from singers collection and rest are from instruments collection.
+
+--------------------------------------------------------------------------------------------------------
+
+DATABASE BACKUP AND RESTORE
+-----------------------------------------------------------
+In Ubuntu : 
+https://www.digitalocean.com/community/tutorials/how-to-back-up-restore-and-migrate-a-mongodb-database-on-ubuntu-14-04
+https://www.digitalocean.com/community/tutorials/how-to-import-and-export-a-mongodb-database-on-ubuntu-14-04
+
+In Window : 
