@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('./header.ejs')%>
+    <center>
+        <h2>Registration Form</h2>
+        <span style="color:red"><%=message%></span>
+
+        <form action="/index/addEmployee" method="post">
+        <input type="text" placeholder="Enter Username" name="username" id="username"> <br>
+        <input type="email" placeholder="Enter Email" name="email" id="email"> <br>
+        <input type="password" placeholder="Enter Password" name="password" id="password"> <br>
+        Select Gender <br>
+        <input type="radio" name="gender" id="male" value="male"> 
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="female"> 
+        <label for="female">Female</label>
+        <br>
+        Select Hobbies <br>
+        <input type="checkbox" name="hobbies" id="cricket" value="cricket"> 
+        <label for="cricket">Cricket</label>
+        <input type="checkbox" name="hobbies" id="football" value="football"> 
+        <label for="football">Football</label>
+        <br>
+        <textarea placeholder="Enter Address" name="address" id="address"></textarea> <br>
+        <input type="submit" value="Register"> <br>
+        <input type="reset" value="Reset">
+    </form>
+    <br>
+    <a href="/index/login">Already Registered ? Login Here</a>
+    </center>
+    
+</body>
+</html>
