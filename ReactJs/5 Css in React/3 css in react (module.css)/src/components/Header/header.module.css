@@ -1,0 +1,13 @@
+.header{
+    height: 60px;
+    background-color: white;
+}
+.logo{
+    height: 60px;
+}
+.heading{
+    font-size: 30px;
+    font-family: candara;
+    position: absolute;
+    margin-top: 10px;
+}

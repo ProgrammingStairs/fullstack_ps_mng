@@ -1,0 +1,15 @@
+body{
+    background-color: grey;
+}
+h1{
+    text-shadow: 1px 1px 1px black;
+    color:white;
+    font-size: 34px;
+    font-family: cursive;
+}
+#myId{
+    color:brown;
+}
+.myClass{
+    text-transform: uppercase;
+}
