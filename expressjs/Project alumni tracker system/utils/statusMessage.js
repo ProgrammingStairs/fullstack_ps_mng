@@ -1,0 +1,33 @@
+export const message = {
+    ADMIN_CREDENTIAL_ERROR : "Error while inserting admin credential",
+    LOGIN_ERROR: "Email Id or Password is Wrong",
+    SOMETHING_WENT_WRONG:"Something went wrong",
+    LOGIN_ISSUE : "Please try after some time | Authentication Error",
+    EVENT_ADDED : "Event Added Successfully",
+    EVENT_NOT_ADDED : "Error while Adding Event",
+    EVENT_LIST_ERROR : "Error while fetching list of events",
+    EVENT_DELETE_ERROR : "Error while deleting event",
+    EVENT_DELETED : "Event deleted successfully",
+    EVENT_UPDATED_SUCCESSFULLY:"Event Updated Successfully",
+    MAIL_SENDING_ERROR: "Error While sending mail",
+    PROFILE_UPLOAD_ERROR:"Error while uploading profile pic",
+    WAIT_FOR_ADMIN_APPROVAL: " Wait for Admin Approval Till That You need to verify yourself on Mail",
+    ERROR_VERIFYING_MAIL : "Error while Verifying mail",
+    EMAIL_VERIFICATION:"Email Verification Successfull",
+    ADMIN_VERIFIED_SUCCESSFULLY:"Alumni Verified Successfully",
+    JOB_SUCCESS_STATUS:"Job Posting Successfull",
+    FORUM_ADDED:"Forum Added Successfully",
+    FORUM_REMOVED : "Forum Removed Successfully",
+    ERROR_FORUM_MEMBER:"Error While Adding in Forum Members",
+    ALREADY_MEMBER : "You are already a member of group",
+    EVENT_ACCEPTANCE_ERROR:"Error while Accepting Event Invitation",
+    INVITATION_ACCEPTED : "Invitation Accepted", 
+    ALREADY_ACCEPTED : "Invitation Already Accepted",
+    IMAGES_UPLOADED : "Images Uploaded Successfully",
+    LOGOUT_SUCCESSFULL:"Logout Successfull",
+}
+
+export const status = {
+    SUCCESS : 200,
+    ERROR : 500,
+}

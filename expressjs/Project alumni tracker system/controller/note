@@ -1,0 +1,59 @@
+export const alumniAcceptInvitationController = async (request,response)=>{
+    try{
+        const alumniObj = await alumniSchema.findOne({email:request.payload.email},{alumniId:1,username:1});
+        const alumniId = alumniObj.alumniId;
+        const eventData = await eventSchema.find({status:true}).lean();
+        const eventConfirmationData = await eventConfirmationSchema.find();
+            
+        var eventStatus = true;
+        for(var i=0;i<eventConfirmationData.length;i++){
+            if(eventConfirmationData[i].alumniId == alumniId && eventConfirmationData[i].eventId == request.body.eventId){
+                eventStatus = false;
+                break;
+            } 
+        }
+        if(eventStatus){
+            const obj = {
+                eventConfirmationId : uuid4(),
+                eventId : request.body.eventId,
+                eventName : request.body.eventName,
+                alumniId : alumniId,
+                alumniName : alumniObj.username
+            }
+            const result = await eventConfirmationSchema.create(obj);
+            console.log("Result : ",result);
+            if(eventConfirmationData.length!=0){
+                for(var i=0;i<eventData.length;i++){
+                    for(var j=0;j<eventConfirmationData.length;j++){
+                        if(eventConfirmationData[j].eventId == eventData[i].eventId && eventConfirmationData[j].alumniId == alumniId)
+                            eventData[i].inviteBTNMessage = 'Invitation Accepted'
+                    }
+                }    
+            }
+            console.log("eventData : ",eventData);
+            
+            response.render("alumniViewEvents.ejs",{eventData:eventData.reverse(),email:request.payload.email,message:message.INVITATION_ACCEPTED,status:status.SUCCESS});
+        }else{
+            if(eventConfirmationData.length!=0){
+                for(var i=0;i<eventData.length;i++){
+                    for(var j=0;j<eventConfirmationData.length;j++){
+                        if(eventConfirmationData[j].eventId == eventData[i].eventId && eventConfirmationData[j].alumniId == alumniId)
+                            eventData[i].inviteBTNMessage = 'Invitation Accepted'
+                    }
+                }    
+            }
+            response.render("alumniViewEvents.ejs",{eventData:eventData.reverse(),email:request.payload.email,message:message.ALREADY_ACCEPTED,status:status.SUCCESS});
+        }    
+
+    }catch(error){
+        console.log("Error in alumniAcceptInvitationController : ",error);
+        response.render("alumniHome.ejs",{email:request.payload.email,message:message.EVENT_ACCEPTANCE_ERROR,status:status.ERROR});
+    }
+}
+
+//--------------------------
+
+app.use((req, res, next) => {
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+    next();
+});
