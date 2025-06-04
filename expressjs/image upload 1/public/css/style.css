@@ -1,0 +1,17 @@
+input[type='text'],input[type='email'],input[type='password'],input[type='file']{
+    height:26px;
+    width: 260px;
+    margin: 2px;
+}
+textarea{
+    height: 54px;
+    width: 262px;
+}
+input[type='submit'],input[type='reset']{
+    height: 30px;
+    width: 265px;
+    margin: 2px;
+    border-width: 0px;
+    background-color: teal;
+    color:white;
+}
