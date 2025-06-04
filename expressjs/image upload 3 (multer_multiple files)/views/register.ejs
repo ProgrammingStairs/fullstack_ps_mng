@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('./header.ejs')%>
+    <center>
+        <h2>Add Employee Form</h2>
+        <span style="color:red"><%=message%></span>
+
+        <form action="/index/addEmployee" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="Enter Username" name="username" id="username"> <br>
+        <input type="email" placeholder="Enter Email" name="email" id="email"> <br>
+        <input type="password" placeholder="Enter Password" name="password" id="password"> <br>
+        Upload Aadhar Card : <br>
+        <input type="file" multiple name="profileOne" id="profileOne"> 
+        <br>
+        Upload Pan Card : <br>
+        <input type="file" multiple name="profileTwo" id="profileTwo">
+        <br>
+        <textarea placeholder="Enter Summary" name="summary" id="summary"></textarea> <br>
+        <input type="submit" value="Add Profile"> <br>
+        <input type="reset" value="Reset">
+    </form>
+    </center>
+    
+</body>
+</html>
