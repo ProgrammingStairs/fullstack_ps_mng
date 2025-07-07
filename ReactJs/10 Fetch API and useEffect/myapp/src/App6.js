@@ -1,0 +1,44 @@
+import './App.css';
+import { useEffect, useState } from 'react';
+function App() {
+  const [data,setData] = useState([]);
+  const getData = async ()=>{
+    try{
+        const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+        const arr = await response.json();
+        setData(arr);
+    }catch(error){
+      console.log("Error occured : "+error);
+    }
+  }
+  useEffect(()=>{
+    getData();   
+  },[]);
+  return (<>
+      <center>
+        <h2>Records</h2>
+      </center>
+      <table border='1' cellSpacing="0" cellPadding="20">
+          <tr>
+            <th>S.No</th>
+            <th>UserId</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Body</th>
+          </tr>
+          {
+            data.map((obj,index)=>{
+              return(<tr>
+                  <td>{index+1}</td>
+                  <td>{obj.userId}</td>
+                  <td>{obj.id}</td>
+                  <td>{obj.title}</td>
+                  <td>{obj.body}</td>
+              </tr>);
+            })
+          }
+      </table>
+  </>);
+}
+
+export default App;
