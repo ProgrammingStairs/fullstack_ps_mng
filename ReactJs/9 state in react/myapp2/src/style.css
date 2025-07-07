@@ -1,0 +1,36 @@
+#outerDiv{
+    width: 100%;
+    height: auto;
+}
+#leftDiv{
+    width: 30%;
+    background-color: black;
+    height:600px;
+    float: left;
+}
+#leftDiv h2{
+    color:white;
+    font-family: candara;
+}
+input{
+    height:30px;
+    width: 300px;
+    margin: 2px;
+}
+input[type='submit'],input[type='reset']{
+    height:35px;
+    width: 310px;
+    margin: 2px;
+    background-color: darkslategray;
+    color:white;
+    font-family: candara;
+    border-width: 0px;
+    font-size: 17px;
+}
+
+#rightDiv{
+    float: left;
+    width: 70%;
+    background-color: teal;
+    height:600px;
+}
