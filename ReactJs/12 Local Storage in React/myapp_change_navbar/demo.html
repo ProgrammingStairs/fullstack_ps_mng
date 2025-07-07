@@ -1,0 +1,20 @@
+<script>
+    var array = [
+        {email:"andrew@gmail.com",password:"123"},
+        {email:"mathew@gmail.com",password:"123"},
+        {email:"mathew@gmail.com",password:"123"}
+    ]
+
+    var email = 'mathew@gmail.com';
+    var password = '123';
+
+    var res = array.filter(obj=> obj.email==email && obj.password==password);
+
+    console.log(res);
+
+    var res1 = array.find(obj=> obj.email==email && obj.password==password);
+
+    console.log(res1);
+
+    
+</script>
