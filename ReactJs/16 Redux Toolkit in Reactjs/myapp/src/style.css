@@ -1,0 +1,46 @@
+#header{
+    height: 100px;
+    background-color: black;
+    color:white;
+}
+.row{
+    height: 510px;
+   }
+#sidebar{
+    width: 25%;
+    height: 510px;
+    background-color: teal;
+    float: left;
+}
+#section{
+    width: 75%;
+    height: 510px;
+    background-color: darkslategrey;
+    float: left;
+}
+#footer{
+    height: 20px;
+    padding: 20px;
+    background-color: black;
+    color:white;
+}
+button{
+    height:50px;
+    width:150px;
+    background-color: black;
+    color:white;
+    margin:5px;
+    font-size: 18px;
+    border-width: 0px;
+}
+
+button:hover{
+    background-color: royalblue;
+}
+
+input[type='text']{
+    height:30px;
+    width:300px;
+    font-size: 18px;
+    margin: 5px;
+}

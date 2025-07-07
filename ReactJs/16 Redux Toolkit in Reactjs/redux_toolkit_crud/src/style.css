@@ -1,0 +1,14 @@
+input{
+    height:30px;
+    width:300px;
+    font-size: 16px;
+    margin: 5px;
+}
+
+input[type='submit'],input[type='reset']{
+    height:35px;
+    width: 305px;
+    border-width: 0px;
+    background-color: black;
+    color:white;
+}
